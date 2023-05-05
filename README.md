@@ -14,15 +14,15 @@ Modeled after: https://i.imgur.com/4EDUDlZ.jpeg
 1.70ea 1gb https://www.arrow.com/en/products/mx30lf1g28ad-ti/macronix-international
 
 ## 40x40 mm black heat sink with tape
-1.42 ea https://www.aliexpress.us/item/2251832401116531.html
-1.23 ea 10pack https://www.aliexpress.us/item/2251832640943503.html
-2.68 ea 5pk https://www.aliexpress.us/item/2251832494702724.html
-3.92 ea https://www.digikey.com/en/products/detail/t-global-technology/TGH-0380-03/13682115
+- 1.42 ea https://www.aliexpress.us/item/2251832401116531.html
+- 1.23 ea 10pack https://www.aliexpress.us/item/2251832640943503.html
+- 2.68 ea 5pk https://www.aliexpress.us/item/2251832494702724.html
+- 3.92 ea https://www.digikey.com/en/products/detail/t-global-technology/TGH-0380-03/13682115
 
 ## PCIE 12cm full height bracket and screws
-10.89 for 5 (mesh) https://www.aliexpress.us/item/3256804202694680.html
-18.21 for 5 (solid) https://www.aliexpress.us/item/3256804202694680.html
-10.1 for 5 mesh https://www.ebay.com/itm/374654311256
+- 10.89 for 5 (mesh) https://www.aliexpress.us/item/3256804202694680.html
+- 18.21 for 5 (solid) https://www.aliexpress.us/item/3256804202694680.html
+- 10.1 for 5 mesh https://www.ebay.com/itm/374654311256
 
 
 # Notes:
@@ -37,21 +37,21 @@ with schematic: https://www.pcbway.com/project/shareproject/USB_flash_drive_AU64
 PCIE pinout:
 https://pinoutguide.com/Slots/pci_express_pinout.shtml
 
-##Windows Readyboost info:
+## Windows Readyboost info:
 https://en.wikipedia.org/wiki/ReadyBoost
-Must be at least 256MB  storage
-Access time of 1ms or less
-2.5MB/s read 4kb rand
-1.75MB/s write 512kb rand
+- Must be at least 256MB  storage  
+- Access time of 1ms or less  
+- 2.5MB/s read 4kb rand  
+- 1.75MB/s write 512kb rand  
 
-##Order from:
-dimensions 110mm X 140mm
-1.6mm thick FR4
-blue
-5/5mil trace space
-min hole size 0.25mm
-edge connector, 20* bevel, ENIG 1u"
-1oz copper
-PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx
-JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100
+## Order from:
+dimensions 110mm X 140mm  
+1.6mm thick FR4  
+blue  
+5/5mil trace space  
+min hole size 0.25mm  
+edge connector, 20* bevel, ENIG 1u"  
+1oz copper  
+PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx  
+JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
 

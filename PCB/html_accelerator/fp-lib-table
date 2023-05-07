@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "html_accel_footprints")(type "KiCad")(uri "${KIPRJMOD}/html_accel_footprints.pretty")(options "")(descr ""))
+)

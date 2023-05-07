@@ -1,0 +1,38 @@
+(export (version "E")
+  (design
+    (source "D:\\Google Drive\\Kuro\\1 Documents\\2 Projects\\HTML_Accelerator\\PCB\\html_accelerator\\html_accelerator.kicad_sch")
+    (date "5/6/2023 5:48:18 PM")
+    (tool "Eeschema (7.0.0)")
+    (sheet (number "1") (name "/") (tstamps "/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "html_accelerator.kicad_sch")
+        (comment (number "1") (value ""))
+        (comment (number "2") (value ""))
+        (comment (number "3") (value ""))
+        (comment (number "4") (value ""))
+        (comment (number "5") (value ""))
+        (comment (number "6") (value ""))
+        (comment (number "7") (value ""))
+        (comment (number "8") (value ""))
+        (comment (number "9") (value "")))))
+  (components
+    (comp (ref "U1")
+      (value "~")
+      (footprint "Package_QFP:LQFP-128_14x20mm_P0.5mm")
+      (libsource (lib "html_accel_Symbols") (part "VT6212") (description ""))
+      (property (name "Sheetname") (value ""))
+      (property (name "Sheetfile") (value "html_accelerator.kicad_sch"))
+      (sheetpath (names "/") (tstamps "/"))
+      (tstamps "78204c28-c0d7-4c7e-ab53-0a7a2296ea05")))
+  (libparts
+    (libpart (lib "html_accel_Symbols") (part "VT6212")
+      (fields
+        (field (name "Reference") "U"))))
+  (libraries
+    (library (logical "html_accel_Symbols")
+      (uri "D:\\Google Drive\\Kuro\\1 Documents\\2 Projects\\HTML_Accelerator\\PCB\\html_accelerator/html_accel_Symbols.kicad_sym")))
+  (nets))

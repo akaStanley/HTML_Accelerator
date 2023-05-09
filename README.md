@@ -58,5 +58,7 @@ JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer
 ##Todo:
 1. Check 6438 schematic symbol
 2. Create VT6212 schematic symbol
-3. Check VT6212 symbol
-4. Check MX301 symbol/cleanup
+3  Add USB 3of5
+4  Add POWER 4of5
+5. Check VT6212 symbol
+6. Check MX301 symbol/cleanup

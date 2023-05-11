@@ -58,3 +58,4 @@ JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer
 ## Todo:
 1. Check VT6212 symbol
 2. Add SCH pages
+https://docs.kicad.org/7.0/en/eeschema/eeschema.html#hierarchical-schematics

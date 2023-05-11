@@ -484,6 +484,14 @@
     [
       "12b3a7c9-141f-40ba-9ebb-094b58bfa6c7",
       ""
+    ],
+    [
+      "3421334e-11b3-46c8-b0f2-353f0fa6f362",
+      "PCIE_Slot"
+    ],
+    [
+      "c1e0624f-11bc-46dd-864f-01b3a932cae6",
+      "FLASH_CTRL"
     ]
   ],
   "text_variables": {}

@@ -1,7 +1,7 @@
 # HTML_Accelerator
  A funcitoning version of the fictional PCIE card
 
-Modeled after: https://i.imgur.com/4EDUDlZ.jpeg
+Modeled after: https://twitter.com/_Ninji/status/1317197426449633281
 
 
 # Signal Chain:
@@ -55,10 +55,6 @@ edge connector, 20* bevel, ENIG 1u"
 PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx  
 JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
 
-##Todo:
-1. Check 6438 schematic symbol
-2. Create VT6212 schematic symbol
-3  Add USB 3of5
-4  Add POWER 4of5
-5. Check VT6212 symbol
-6. Check MX301 symbol/cleanup
+## Todo:
+1. Check VT6212 symbol
+2. Add SCH pages

@@ -4,9 +4,17 @@
 Modeled after: https://twitter.com/_Ninji/status/1317197426449633281
 
 
-# Signal Chain:
-1. PCIE connection to PC  
+# Signal Chain (new):
+1. PCIE 1x (16x size)connection to PC  
+2. 1x MCS9990 PCIE to USB2.0 port host controller  https://www.aliexpress.us/item/3256803035586571.html
+3. 4x Alcor Micro AU6438BS USB to flash reader (order 2, make sure to choose 6438BS https://www.aliexpress.us/item/3256804567088275.html) (backup order 50x here https://www.aliexpress.us/item/2251832667577487.html)  
+4. 4x Flash storage iC mimic card inserted to reader  
+
+# Signal Chain (old):
+1. PCIE 1x (16x size)connection to PC  
 2. 1x VIA Technolgies VT6212 PCI USB2.0 4 port Host controller  https://www.aliexpress.us/item/2251832638752642.html  
+2.5 (if using VT6212, need PCI to PCIE reversable interface iC
+2b. 1x MCS9990 PCIE to USB2.0 port host controller  https://www.aliexpress.us/item/3256803035586571.html
 3. 4x Alcor Micro AU6438BS USB to flash reader (order 2, make sure to choose 6438BS https://www.aliexpress.us/item/3256804567088275.html) (backup order 50x here https://www.aliexpress.us/item/2251832667577487.html)  
 4. 4x Flash storage iC mimic card inserted to reader  
 
@@ -56,6 +64,9 @@ PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx
 JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
 
 ## Todo:
-1. Check VT6212 symbol
+1. Check VT6212 symbol or
+2. Get PCIE to USB 2.0 IC that can be purchased online
 2. Add SCH pages
 https://docs.kicad.org/7.0/en/eeschema/eeschema.html#hierarchical-schematics
+
+USB pullup 1.5k on D+ for high speed conneciton (maybe in chip already)

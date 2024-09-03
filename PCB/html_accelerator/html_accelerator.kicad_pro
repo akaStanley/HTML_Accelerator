@@ -490,6 +490,18 @@
       "PCIE_Slot"
     ],
     [
+      "8c9bd1fc-c6d3-45cd-babe-9d9e8ea6549d",
+      "PCIE_POWER"
+    ],
+    [
+      "665af54b-4239-4192-942b-b320317cb76f",
+      "PCIE_USB"
+    ],
+    [
+      "e5de870d-07a3-4698-84b8-c201bbab4843",
+      "PCIE_GPIO"
+    ],
+    [
       "c1e0624f-11bc-46dd-864f-01b3a932cae6",
       "FLASH_CTRL"
     ]

@@ -64,7 +64,7 @@ PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx
 JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
 
 ## Todo:
-1. Wire up PCIE connection
+1. Wire up PCIE connection (eeprom neeed?)
 2. Power Supplies & Decoupling caps
 3. Wire up USB connection #1
 4. Wire up USB connection #2,3,4

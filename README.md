@@ -64,9 +64,11 @@ PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx
 JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
 
 ## Todo:
-1. Check VT6212 symbol or
-2. Get PCIE to USB 2.0 IC that can be purchased online
-2. Add SCH pages
+1. Wire up PCIE connection
+2. Power Supplies & Decoupling caps
+3. Wire up USB connection #1
+4. Wire up USB connection #2,3,4
+
 https://docs.kicad.org/7.0/en/eeschema/eeschema.html#hierarchical-schematics
 
 USB pullup 1.5k on D+ for high speed conneciton (maybe in chip already)

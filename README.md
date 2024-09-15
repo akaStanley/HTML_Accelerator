@@ -3,12 +3,16 @@
 
 Modeled after: https://twitter.com/_Ninji/status/1317197426449633281
 
+# Block Diagram
+Made with https://app.diagrams.net/
+
+![Block Diagram](HMTL_Accel_Block_Diagram.jpg)
 
 # Signal Chain (new):
 1. PCIE 1x (16x size)connection to PC  
 2. 1x MCS9990 PCIE to USB2.0 port host controller  https://www.aliexpress.us/item/3256803035586571.html
-3. 4x Alcor Micro AU6438BS USB to flash reader (order 2, make sure to choose 6438BS https://www.aliexpress.us/item/3256804567088275.html) (backup order 50x here https://www.aliexpress.us/item/2251832667577487.html)  
-4. 4x Flash storage iC mimic card inserted to reader  
+3. 4x Alcor Micro AU6438BS USB to eMMC reader (order 2, make sure to choose 6438BS https://www.aliexpress.us/item/3256804567088275.html) (backup order 50x here https://www.aliexpress.us/item/2251832667577487.html)  
+4. 4x eMMC storage iC mimic card inserted to reader (tbd)
 
 # Signal Chain (old):
 1. PCIE 1x (16x size)connection to PC  
@@ -38,6 +42,9 @@ VT6212 reference PCB for PCIE to USB card:
 https://www.aliexpress.us/item/3256803148283309.html
 https://www.startech.com/en-us/cards-adapters/pexusb4dp
 
+MCS9990 reference schematic
+https://www.asix.com.tw/en/product/Interface/PCIe_Bridge/MCS9990
+
 AU6438 USB to EMMC reader pcb for reference:  
 https://www.aliexpress.us/item/3256805090449780.html
 with schematic: https://www.pcbway.com/project/shareproject/USB_flash_drive_AU6438.html  
@@ -51,6 +58,7 @@ https://en.wikipedia.org/wiki/ReadyBoost
 - Access time of 1ms or less  
 - 2.5MB/s read 4kb rand  
 - 1.75MB/s write 512kb rand  
+- up to 8 USB devices
 
 ## Order from:
 dimensions 110mm X 140mm  
@@ -62,6 +70,13 @@ edge connector, 20* bevel, ENIG 1u"
 1oz copper  
 PCBway 75$ with shipping https://www.pcbway.com/orderonline.aspx  
 JLC PCB 55$ with shipping https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100  
+
+## Power Budget:
+5v rail, USB
+- 24mA AU6438 USB interface
+- 200mA H26M31001 eMMC
+- = 900mA total for all eMMC control
+- (1.5A Buck from 12-5v should be sufficent for LEDs as well
 
 ## Todo:
 1. Wire up PCIE connection (eeprom neeed?)

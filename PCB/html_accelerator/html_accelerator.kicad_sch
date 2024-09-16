@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "HTML Accelerator")
+    (date "2024-09-15")
+    (rev "1")
+  )
+
   (lib_symbols
   )
 
@@ -63,10 +69,10 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid c1e0624f-11bc-46dd-864f-01b3a932cae6)
-    (property "Sheetname" "FLASH_CTRL" (at 83.82 24.6884 0)
+    (property "Sheetname" "eMMC1" (at 83.82 24.6884 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "FLASH_CTRL.kicad_sch" (at 83.82 46.3046 0)
+    (property "Sheetfile" "eMMC1.kicad_sch" (at 83.82 46.3046 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
@@ -80,7 +86,7 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid e5de870d-07a3-4698-84b8-c201bbab4843)
-    (property "Sheetname" "PCIE_GPIO" (at 25.4 107.2384 0)
+    (property "Sheetname" "PCIE_CONFIG_GPIO" (at 25.4 107.2384 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
     (property "Sheetfile" "PCIE_GPIO.kicad_sch" (at 25.4 126.3146 0)

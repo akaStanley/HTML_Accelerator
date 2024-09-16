@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "PCIE Slot, Bracket")
+    (date "2024-09-15")
+    (rev "1")
+  )
+
   (lib_symbols
     (symbol "Connector:Bus_PCI_Express_x8" (in_bom yes) (on_board yes)
       (property "Reference" "J2" (at -3.81 46.99 0)

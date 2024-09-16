@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "12v, 3v3, 1v2 Power, Buck")
+    (date "2024-09-15")
+    (rev "1")
+  )
+
   (lib_symbols
     (symbol "Device:C" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "C" (at 0.635 2.54 0)
@@ -3219,8 +3225,8 @@
   (symbol (lib_id "html_accel_Symbols:MCS9990") (at 207.01 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b7af7225-e22c-4e4a-9720-46459250a858)
-    (property "Reference" "U1" (at 220.98 40.2971 0)
-      (effects (font (size 1.27 1.27)))
+    (property "Reference" "U1" (at 220.98 38.8806 0)
+      (effects (font (size 3 3) bold))
     )
     (property "Value" "MCS9990" (at 220.98 42.2181 0)
       (effects (font (size 1.27 1.27)))

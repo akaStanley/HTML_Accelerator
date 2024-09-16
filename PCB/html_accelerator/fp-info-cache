@@ -1,4 +1,4 @@
-21453206427264009
+21454932894210433
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89592,3 +89592,10 @@ PCIexpress bracket
 0
 2
 2
+html_accel_footprints
+SOP-8L_DIO
+
+AP1513SG-13 
+0
+8
+8

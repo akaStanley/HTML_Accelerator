@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.14">
   <diagram name="Page-1" id="PPufjAX8f_V16HvhKBOY">
-    <mxGraphModel dx="1037" dy="557" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1296" dy="696" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -44,6 +44,16 @@
             <mxPoint y="-7" as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="2yWPxu5EqL3qzud-W6bz-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classicThin;startFill=1;endArrow=classicThin;endFill=1;" edge="1" parent="1" source="2yWPxu5EqL3qzud-W6bz-2" target="2yWPxu5EqL3qzud-W6bz-78">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2yWPxu5EqL3qzud-W6bz-80" value="i2C" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="2yWPxu5EqL3qzud-W6bz-79">
+          <mxGeometry x="-0.5684" y="1" relative="1" as="geometry">
+            <mxPoint x="11" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="2yWPxu5EqL3qzud-W6bz-2" value="&lt;div&gt;&lt;b&gt;MCS9990&lt;/b&gt;&lt;/div&gt;&lt;div&gt;PCIe x4 USB&lt;/div&gt;&lt;div&gt;Host&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="200" y="200" width="120" height="290" as="geometry" />
         </mxCell>
@@ -76,8 +86,8 @@
         <mxCell id="2yWPxu5EqL3qzud-W6bz-4" value="&lt;div&gt;&lt;b&gt;AU6438BS&lt;/b&gt;&lt;/div&gt;&lt;div&gt;USB to eMMC&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;24mA&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="370" y="200" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="2yWPxu5EqL3qzud-W6bz-25" value="&lt;div&gt;&lt;b&gt;TS34063CS&lt;/b&gt;&lt;/div&gt;&lt;div&gt;DC-DC Buck&lt;/div&gt;&lt;div&gt;1.5A&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="200" y="505" width="120" height="90" as="geometry" />
+        <mxCell id="2yWPxu5EqL3qzud-W6bz-25" value="&lt;div&gt;&lt;b&gt;AP1513&lt;/b&gt;&lt;/div&gt;&lt;div&gt;PWM Step Down&lt;br&gt;&lt;/div&gt;&lt;div&gt;2A&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="199.5" y="590" width="120" height="90" as="geometry" />
         </mxCell>
         <mxCell id="2yWPxu5EqL3qzud-W6bz-27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;curved=0;strokeWidth=2;" edge="1" parent="1" source="2yWPxu5EqL3qzud-W6bz-1" target="2yWPxu5EqL3qzud-W6bz-2">
           <mxGeometry relative="1" as="geometry">
@@ -95,7 +105,7 @@
         <mxCell id="2yWPxu5EqL3qzud-W6bz-29" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;curved=0;strokeColor=default;strokeWidth=4;" edge="1" parent="1" source="2yWPxu5EqL3qzud-W6bz-1" target="2yWPxu5EqL3qzud-W6bz-25">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="110" y="550" />
+              <mxPoint x="110" y="635" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -247,6 +257,9 @@
         </mxCell>
         <mxCell id="2yWPxu5EqL3qzud-W6bz-77" value="&lt;div&gt;HTML Accelerator&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;9/15/2024&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
           <mxGeometry x="272" y="82" width="259" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2yWPxu5EqL3qzud-W6bz-78" value="&lt;div&gt;&lt;b&gt;CAT24C256&lt;/b&gt;&lt;/div&gt;&lt;div&gt;256Kb EEPROM&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;3mA&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="510" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

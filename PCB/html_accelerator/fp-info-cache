@@ -1,4 +1,4 @@
-21454932894210433
+21458385989269420
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89575,6 +89575,20 @@ Varistor
 RV_Rect_V25S440P_L26.5mm_W8.2mm_P12.7mm
 Varistor, V25S440P, https://www.littelfuse.com/media?resourcetype=datasheets&itemid=b410c42c-51d1-460e-b1d9-d105d93c9679&filename=littelfuse-varistor-ultramov25s-datasheet
 varistor
+0
+2
+2
+html_accel_footprints
+DIODE_SBR3M30P1_1P78X2P8_DIO-M
+
+SBR2U30P1-7 
+0
+2
+2
+html_accel_footprints
+IND_BOURNS_SRR1208
+
+SRR1208-330YL 
 0
 2
 2

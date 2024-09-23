@@ -65,6 +65,23 @@
     )
   )
 
+  (sheet (at 83.82 52.07) (size 36.83 20.32) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid a3cdbafc-e5e5-4b5b-8c38-75acb12ca284)
+    (property "Sheetname" "eMMC2" (at 83.82 51.3584 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "eMMC2.kicad_sch" (at 83.82 72.9746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "html_accelerator"
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "12"))
+      )
+    )
+  )
+
   (sheet (at 83.82 25.4) (size 36.83 20.32) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
@@ -77,7 +94,24 @@
     )
     (instances
       (project "html_accelerator"
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "10"))
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "11"))
+      )
+    )
+  )
+
+  (sheet (at 83.82 78.74) (size 36.83 20.32) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59)
+    (property "Sheetname" "eMMC3" (at 83.82 78.0284 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "eMMC3.kicad_sch" (at 83.82 99.6446 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "html_accelerator"
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "13"))
       )
     )
   )
@@ -99,7 +133,24 @@
     )
   )
 
+  (sheet (at 83.82 105.41) (size 36.83 20.32) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid e85df621-c9d6-4c41-83df-274e70c69afa)
+    (property "Sheetname" "eMMC4" (at 83.82 104.6984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "eMMC4.kicad_sch" (at 83.82 126.3146 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "html_accelerator"
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "14"))
+      )
+    )
+  )
+
   (sheet_instances
-    (path "/" (page "1"))
+    (path "/" (page "13"))
   )
 )

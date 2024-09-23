@@ -482,6 +482,10 @@
   },
   "sheets": [
     [
+      "12b3a7c9-141f-40ba-9ebb-094b58bfa6c7",
+      ""
+    ],
+    [
       "3421334e-11b3-46c8-b0f2-353f0fa6f362",
       "PCIE_Slot"
     ],
@@ -498,16 +502,16 @@
       "PCIE_CONFIG_GPIO"
     ],
     [
+      "d3bc6377-21cd-485e-9e5e-2f9ae5072344",
+      "LEDs"
+    ],
+    [
       "c1e0624f-11bc-46dd-864f-01b3a932cae6",
       "eMMC1"
     ],
     [
       "a3cdbafc-e5e5-4b5b-8c38-75acb12ca284",
       "eMMC2"
-    ],
-    [
-      "12b3a7c9-141f-40ba-9ebb-094b58bfa6c7",
-      ""
     ],
     [
       "e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59",

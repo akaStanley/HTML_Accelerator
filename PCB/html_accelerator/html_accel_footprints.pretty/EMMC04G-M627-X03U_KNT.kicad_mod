@@ -238,4 +238,9 @@
   (pad "P12" smd circle (at 2.25 3.25) (size 0.254 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 03ad766e-098b-4817-be1b-35f73d6fa6e7))
   (pad "P13" smd circle (at 2.75 3.25) (size 0.254 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp a806806a-08a1-4509-b1c6-e6bb88cb1743))
   (pad "P14" smd circle (at 3.25 3.25) (size 0.254 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp d7be6559-e933-4284-b562-ac9c9542887b))
+  (model "${KICAD7_3DMODEL_DIR}/Package_BGA.3dshapes/BGA-169_11.0x11.0mm_Layout13x13_P0.8mm_Ball0.5mm_Pad0.4mm_NSMD.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1.2 1.06 1))
+    (rotate (xyz 0 0 0))
+  )
 )

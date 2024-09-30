@@ -76,4 +76,9 @@
       )
     )
   )
+  (model "${KICAD7_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Bourns_SRR1260.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1.06 1.06 1))
+    (rotate (xyz 0 0 0))
+  )
 )

@@ -66,4 +66,9 @@
   (pad "6" smd oval (at 2.7 0.635) (size 1.55 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 01197627-8143-45c6-8af9-ea66a91c08e8))
   (pad "7" smd oval (at 2.7 -0.635) (size 1.55 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 7d719c38-0d49-4873-832d-c66f8ee68767))
   (pad "8" smd oval (at 2.7 -1.905) (size 1.55 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 84276c9c-2d1d-45a9-8719-aacc9d8fe147))
+  (model "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/HTSOP-8-1EP_3.9x4.9mm_Pitch1.27mm.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

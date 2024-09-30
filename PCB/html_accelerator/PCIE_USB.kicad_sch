@@ -1,6 +1,6 @@
 (kicad_sch (version 20230121) (generator eeschema)
 
-  (uuid c1aa1350-6385-4ff0-bfb5-bff0777116bd)
+  (uuid 2e1b35ab-f4cc-403e-b2a0-a395d9313e9a)
 
   (paper "A4")
 
@@ -1818,7 +1818,7 @@
     (property "Value" "470uF" (at 41.91 156.21 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 44.45 154.94 0)
+    (property "Footprint" "Capacitor_SMD:CP_Elec_10x10" (at 44.45 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 44.45 154.94 0)
@@ -2278,7 +2278,7 @@
     (property "Value" "470uF" (at 151.13 156.21 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 148.59 154.94 0)
+    (property "Footprint" "Capacitor_SMD:CP_Elec_10x10" (at 148.59 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 148.59 154.94 0)

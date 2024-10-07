@@ -1280,7 +1280,6 @@
     )
   )
 
-
   (junction (at 137.16 144.78) (diameter 0) (color 0 0 0 0)
     (uuid 15dfb470-c5ae-4875-b9c5-d5f2192f332c)
   )
@@ -1754,6 +1753,10 @@
   (text "2A max" (at 151.13 135.89 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2f71a4f3-37d0-4e1d-8e98-a2a3bfea0564)
+  )
+  (text "90Ω impedance" (at 129.54 105.41 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 6728ff30-3ea7-4b9a-ba06-3a49a7c749e7)
   )
 
   (global_label "90_USB1_D_N" (shape bidirectional) (at 147.32 58.42 0) (fields_autoplaced)

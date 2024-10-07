@@ -292,11 +292,11 @@
         )
       )
     )
-    (symbol "power:+3V3" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (symbol "power:+5V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "+3V3" (at 0 3.556 0)
+      (property "Value" "+5V" (at 0 3.556 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -308,10 +308,10 @@
       (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Power symbol creates a global label with name \"+3V3\"" (at 0 0 0)
+      (property "ki_description" "Power symbol creates a global label with name \"+5V\"" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "+3V3_0_1"
+      (symbol "+5V_0_1"
         (polyline
           (pts
             (xy -0.762 1.27)
@@ -337,9 +337,9 @@
           (fill (type none))
         )
       )
-      (symbol "+3V3_1_1"
+      (symbol "+5V_1_1"
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "+3V3" (effects (font (size 1.27 1.27))))
+          (name "+5V" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
@@ -385,6 +385,7 @@
       )
     )
   )
+
 
 
   (wire (pts (xy 46.99 30.48) (xy 46.99 33.02))
@@ -440,7 +441,7 @@
     (property "Value" "470uF" (at 57.15 90.17 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 59.69 88.9 0)
+    (property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.8" (at 59.69 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 59.69 88.9 0)
@@ -459,6 +460,9 @@
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "C67") (unit 1)
         )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "C24") (unit 1)
+        )
       )
     )
   )
@@ -475,7 +479,7 @@
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 72.644 84.074 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "1%" (at 73.66 83.82 0)
+    (property "Datasheet" "~" (at 73.66 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5e1a3ab2-2de8-40cb-9e6b-6e2e9e558785))
@@ -496,6 +500,9 @@
         )
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "R66") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "R58") (unit 1)
         )
       )
     )
@@ -531,6 +538,9 @@
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "#PWR0117") (unit 1)
         )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "#PWR040") (unit 1)
+        )
       )
     )
   )
@@ -562,51 +572,8 @@
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "#PWR0114") (unit 1)
         )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+3V3") (at 46.99 30.48 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid cabbd110-a87d-42b1-be30-f2b1421703eb)
-    (property "Reference" "#PWR03" (at 46.99 34.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5v_USB" (at 46.99 25.7081 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 46.99 30.48 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 46.99 30.48 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 1a3901b1-1987-469b-b156-3eaf4ecfa0f9))
-    (instances
-      (project "html_accelerator"
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362"
-          (reference "#PWR03") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/8c9bd1fc-c6d3-45cd-babe-9d9e8ea6549d"
-          (reference "#PWR014") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/665af54b-4239-4192-942b-b320317cb76f"
-          (reference "#PWR062") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/c1e0624f-11bc-46dd-864f-01b3a932cae6"
-          (reference "#PWR066") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/a3cdbafc-e5e5-4b5b-8c38-75acb12ca284"
-          (reference "#PWR081") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59"
-          (reference "#PWR092") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e85df621-c9d6-4c41-83df-274e70c69afa"
-          (reference "#PWR0103") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
-          (reference "#PWR0111") (unit 1)
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -633,6 +600,9 @@
       (project "html_accelerator"
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "D2") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "D3") (unit 1)
         )
       )
     )
@@ -665,6 +635,43 @@
         )
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "C66") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "C23") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+5V") (at 46.99 30.48 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ff840c13-1883-41ae-9c42-b945722fd420)
+    (property "Reference" "#PWR015" (at 46.99 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 46.99 26.9781 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 46.99 30.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 46.99 30.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 41a5282f-4bb2-48fc-a7b8-627dea9c6b65))
+    (instances
+      (project "html_accelerator"
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/665af54b-4239-4192-942b-b320317cb76f"
+          (reference "#PWR015") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/c1e0624f-11bc-46dd-864f-01b3a932cae6"
+          (reference "#PWR019") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
+          (reference "#PWR050") (unit 1)
+        )
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
+          (reference "#PWR039") (unit 1)
         )
       )
     )

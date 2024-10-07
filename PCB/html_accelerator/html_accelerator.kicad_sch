@@ -20,11 +20,11 @@
     (uuid 0fbe7c09-2a3d-4707-a46f-d9545b6886a7)
   )
 
-  (image (at 207.01 91.44) (scale 0.466458)
+  (image (at 207.01 91.44) (scale 0.990302)
     (uuid 2504e92f-aae2-4014-acea-f10db1b0e5a2)
     (data
       iVBORw0KGgoAAAANSUhEUgAABkUAAAYJCAIAAABgEIkQAAAAA3NCSVQICAjb4U/gAAAACXBIWXMA
-      ABYlAAAWJQFJUiTwAAAgAElEQVR4nOzdebxkZ1Xo/d96nmfvqnNOd2dmEgNICFMwQIIyDzIpcgWE
+      ABXgAAAV4AGNVCw4AAAgAElEQVR4nOzdebxkZ1Xo/d96nmfvqnNOd2dmEgNICFMwQIIyDzIpcgWE
       QBRBQNBXBa5XuK8T3sEritcB4XIFARGJyEwgEKZIJmSQMIYAAkkIQ+ah093nnKq9n2HdP55ddep0
       dyJBI33S6/vp5AxVtWsPz66qvc5a6xFVxRhjjDHGGGOMMcaYLcL9oFfAGGOMMcYYY4wxxpibwOJZ
       xhhjjDHGGGOMMWYrsXiWMcYYY4wxxhhjjNlKLJ5ljDHGGGOMMcYYY7YSi2cZY4wxxhhjjDHGmK3E
@@ -9688,6 +9688,23 @@
     (instances
       (project "html_accelerator"
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 77.47 153.67) (size 36.83 20.32)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb)
+    (property "Sheetname" "Greebles" (at 77.47 160.02 0)
+      (effects (font (size 3 3) bold) (justify left bottom))
+    )
+    (property "Sheetfile" "greebles.kicad_sch" (at 77.47 174.5746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "html_accelerator"
+        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7" (page "7"))
       )
     )
   )

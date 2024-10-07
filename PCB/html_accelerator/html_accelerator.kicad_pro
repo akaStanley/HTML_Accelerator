@@ -45,7 +45,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -190,7 +190,24 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "lib_symbol_issues|1524000|1206500|58d2ce2e-3bce-4b33-b8ce-c91b9e677a7e|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|520700|558800|a2e99839-41f3-4747-a046-1045915408ca|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|596900|850900|323d67cb-e50b-43d4-addb-07541bf4790b|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|596900|927100|05afa167-3ef8-46f0-a65a-86d8c08a4804|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|736600|800100|5e1a3ab2-2de8-40cb-9e6b-6e2e9e558785|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|736600|876300|ca485fb0-87cd-4f70-9f8a-6c8e4898d33d|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|787400|800100|e8421a60-8ee7-4232-88f2-9ab0a905f3ee|00000000-0000-0000-0000-000000000000|||",
+      "pin_not_connected|901700|876300|3b7023b6-adf0-4865-97fe-be86672f532d|00000000-0000-0000-0000-000000000000|||",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|45cc62c3-2f6a-4931-ad13-92287e9c58de|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/a3cdbafc-e5e5-4b5b-8c38-75acb12ca284",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|45cc62c3-2f6a-4931-ad13-92287e9c58de|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/c1e0624f-11bc-46dd-864f-01b3a932cae6",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|45cc62c3-2f6a-4931-ad13-92287e9c58de|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|45cc62c3-2f6a-4931-ad13-92287e9c58de|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e85df621-c9d6-4c41-83df-274e70c69afa",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|7994054a-9c73-4141-942e-af173b5f27b0|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/a3cdbafc-e5e5-4b5b-8c38-75acb12ca284",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|7994054a-9c73-4141-942e-af173b5f27b0|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/c1e0624f-11bc-46dd-864f-01b3a932cae6",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|7994054a-9c73-4141-942e-af173b5f27b0|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59",
+      "pin_to_pin|1587500|1905000|4b006f89-e9a7-4c16-a921-281f79e55f10|7994054a-9c73-4141-942e-af173b5f27b0|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362|/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e85df621-c9d6-4c41-83df-274e70c69afa"
+    ],
     "meta": {
       "version": 0
     },
@@ -431,7 +448,18 @@
     "meta": {
       "version": 3
     },
-    "net_colors": null,
+    "net_colors": {
+      "+12V": "rgb(0, 255, 255)",
+      "+1V2": "rgb(255, 0, 0)",
+      "+3V0": "rgb(128, 77, 0)",
+      "+3V3": "rgb(255, 153, 0)",
+      "+5V": "rgb(255, 0, 255)",
+      "3v3_filt": "rgb(221, 133, 0)",
+      "GND": "rgb(0, 72, 0)",
+      "Net-(U1A-+1.2VA_AUX)": "rgb(194, 0, 0)",
+      "Net-(U1A-+1.2VOUT_REG)": "rgb(132, 0, 0)",
+      "Net-(U1A-+3.3VA_AUX)": "rgb(204, 102, 0)"
+    },
     "netclass_assignments": null,
     "netclass_patterns": []
   },
@@ -470,6 +498,14 @@
       "version": 1
     },
     "net_format_name": "KiCad",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 0,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
@@ -504,6 +540,10 @@
     [
       "d3bc6377-21cd-485e-9e5e-2f9ae5072344",
       "LEDs"
+    ],
+    [
+      "7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb",
+      "Greebles"
     ],
     [
       "c1e0624f-11bc-46dd-864f-01b3a932cae6",

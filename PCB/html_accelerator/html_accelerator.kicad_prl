@@ -2,11 +2,9 @@
   "board": {
     "active_layer": 0,
     "active_layer_preset": "",
-    "auto_track_width": true,
+    "auto_track_width": false,
     "hidden_netclasses": [],
-    "hidden_nets": [
-      "Net-(U1A-+1.2VA_AUX)"
-    ],
+    "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 2,
     "opacity": {
@@ -18,15 +16,15 @@
     },
     "selection_filter": {
       "dimensions": false,
-      "footprints": true,
+      "footprints": false,
       "graphics": false,
       "keepouts": false,
-      "lockedItems": false,
+      "lockedItems": true,
       "otherItems": false,
       "pads": false,
       "text": false,
-      "tracks": false,
-      "vias": false,
+      "tracks": true,
+      "vias": true,
       "zones": false
     },
     "visible_items": [
@@ -63,7 +61,7 @@
       36,
       40
     ],
-    "visible_layers": "ffff7ff_ffffffff",
+    "visible_layers": "ffff77f_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {

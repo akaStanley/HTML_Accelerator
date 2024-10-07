@@ -1,4 +1,4 @@
-21460115990124867
+21461844277782693
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89592,6 +89592,13 @@ EMMC04G-MK27-C01C
 0
 153
 153
+html_accel_footprints
+Heatsink
+
+
+0
+0
+0
 html_accel_footprints
 IND_BOURNS_SRR1208
 

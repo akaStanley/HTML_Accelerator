@@ -875,7 +875,7 @@
       )
     )
   )
-  (symbol "Heatsink" (in_bom yes) (on_board yes)
+  (symbol "Heatsink" (in_bom no) (on_board yes)
     (property "Reference" "MECH" (at 0 0 0)
       (effects (font (size 1.27 1.27)))
     )

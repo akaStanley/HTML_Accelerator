@@ -1824,11 +1824,11 @@
       )
     )
     (symbol "PCIexpress_bracket_1_1"
-      (pin power_in line (at -7.62 -6.35 90) (length 2.54)
+      (pin passive line (at -7.62 -6.35 90) (length 2.54)
         (name "PTH1" (effects (font (size 1.27 1.27))))
         (number "1" (effects (font (size 1.27 1.27))))
       )
-      (pin power_in line (at 8.89 -6.35 90) (length 2.54)
+      (pin passive line (at 8.89 -6.35 90) (length 2.54)
         (name "PTH2" (effects (font (size 1.27 1.27))))
         (number "2" (effects (font (size 1.27 1.27))))
       )

@@ -3288,7 +3288,7 @@
   (symbol (lib_id "Device:R_US") (at 173.99 52.07 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid abc95921-9506-48a1-a7bf-62c8d97c5615)
-    (property "Reference" "R20" (at 170.18 50.8 90)
+    (property "Reference" "R9" (at 170.18 50.8 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0" (at 177.8 50.8 90)
@@ -3304,9 +3304,6 @@
     (pin "2" (uuid b9bdaaa3-0519-435d-aed9-27a5fd708540))
     (instances
       (project "html_accelerator"
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362"
-          (reference "R20") (unit 1)
-        )
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/8c9bd1fc-c6d3-45cd-babe-9d9e8ea6549d"
           (reference "R9") (unit 1)
         )
@@ -3459,9 +3456,6 @@
     (pin "31" (uuid bd2d706a-30f6-4f52-b5c5-47d2664ab0e2))
     (instances
       (project "html_accelerator"
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/3421334e-11b3-46c8-b0f2-353f0fa6f362"
-          (reference "U1") (unit 1)
-        )
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/8c9bd1fc-c6d3-45cd-babe-9d9e8ea6549d"
           (reference "U1") (unit 1)
         )

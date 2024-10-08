@@ -6,8 +6,8 @@
 
   (title_block
     (title "HTML Accelerator")
-    (date "2024-09-15")
-    (rev "1")
+    (date "2024-10-07")
+    (rev "1.0")
   )
 
   (lib_symbols

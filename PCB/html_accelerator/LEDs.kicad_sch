@@ -245,7 +245,7 @@
   (symbol (lib_id "power:+5V") (at 63.5 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0508bc81-3e6a-431b-b2c8-2ffc465ad2e0)
-    (property "Reference" "#PWR015" (at 63.5 49.53 0)
+    (property "Reference" "#PWR052" (at 63.5 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 63.5 42.2181 0)
@@ -260,15 +260,6 @@
     (pin "1" (uuid 5d91c607-97e5-47f1-9d03-dbd63a87d964))
     (instances
       (project "html_accelerator"
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/665af54b-4239-4192-942b-b320317cb76f"
-          (reference "#PWR015") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/c1e0624f-11bc-46dd-864f-01b3a932cae6"
-          (reference "#PWR019") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/a3cdbafc-e5e5-4b5b-8c38-75acb12ca284"
-          (reference "#PWR027") (unit 1)
-        )
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "#PWR052") (unit 1)
         )
@@ -298,9 +289,6 @@
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "D5") (unit 1)
         )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
-          (reference "D3") (unit 1)
-        )
       )
     )
   )
@@ -326,9 +314,6 @@
       (project "html_accelerator"
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "D4") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
-          (reference "D3") (unit 1)
         )
       )
     )
@@ -356,9 +341,6 @@
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "D3") (unit 1)
         )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
-          (reference "D3") (unit 1)
-        )
       )
     )
   )
@@ -384,9 +366,6 @@
       (project "html_accelerator"
         (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/d3bc6377-21cd-485e-9e5e-2f9ae5072344"
           (reference "D2") (unit 1)
-        )
-        (path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/7615f50f-5ee8-4f8e-abfe-c09f3fbb9ceb"
-          (reference "D3") (unit 1)
         )
       )
     )

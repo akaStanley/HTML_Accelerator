@@ -124,7 +124,7 @@
         "min_clearance": 0.15,
         "min_connection": 0.19999999999999998,
         "min_copper_edge_clearance": 0.0,
-        "min_hole_clearance": 0.25,
+        "min_hole_clearance": 0.19999999999999998,
         "min_hole_to_hole": 0.19999999999999998,
         "min_microvia_diameter": 0.3,
         "min_microvia_drill": 0.19999999999999998,
@@ -184,7 +184,10 @@
       "track_widths": [
         0.0,
         0.284,
-        0.3236
+        0.3236,
+        0.5,
+        0.75,
+        1.0
       ],
       "via_dimensions": [
         {
@@ -192,7 +195,7 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.35,
+          "diameter": 0.3,
           "drill": 0.2
         }
       ],
@@ -454,28 +457,45 @@
       {
         "bus_width": 12,
         "clearance": 0.1,
-        "diff_pair_gap": 0.25,
+        "diff_pair_gap": 0.2,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.35,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
-        "via_diameter": 0.35,
-        "via_drill": 0.2,
+        "via_diameter": 0.0,
+        "via_drill": 0.0,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.2,
+        "clearance": 0.09,
+        "diff_pair_gap": 0.23,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2507,
+        "diff_pair_width": 0.2174,
         "line_style": 0,
-        "microvia_diameter": 0.35,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.2,
+        "name": "50_EMMC",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.276,
+        "via_diameter": 0.0,
+        "via_drill": 0.0,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.09,
+        "diff_pair_gap": 0.23,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2494,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
         "name": "85ohm_inner",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -487,12 +507,12 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.2,
+        "clearance": 0.09,
+        "diff_pair_gap": 0.15,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.3236,
+        "diff_pair_width": 0.2593,
         "line_style": 0,
-        "microvia_diameter": 0.35,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
         "name": "85ohm_surface",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -504,12 +524,12 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.2,
+        "clearance": 0.09,
+        "diff_pair_gap": 0.23,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2179,
+        "diff_pair_width": 0.2174,
         "line_style": 0,
-        "microvia_diameter": 0.35,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
         "name": "90ohm_inner",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -521,34 +541,17 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.2,
+        "clearance": 0.09,
+        "diff_pair_gap": 0.15,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.284,
+        "diff_pair_width": 0.2223,
         "line_style": 0,
-        "microvia_diameter": 0.35,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
         "name": "90ohm_surface",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.35,
-        "microvia_drill": 0.2,
-        "name": "EMMC_DAT",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.15,
         "via_diameter": 0.0,
         "via_drill": 0.0,
         "wire_width": 6
@@ -574,11 +577,11 @@
         "pattern": "*85_*"
       },
       {
-        "netclass": "85ohm_inner",
+        "netclass": "90ohm_inner",
         "pattern": "*90_*"
       },
       {
-        "netclass": "EMMC_DAT",
+        "netclass": "50_EMMC",
         "pattern": "*DATA*"
       }
     ]

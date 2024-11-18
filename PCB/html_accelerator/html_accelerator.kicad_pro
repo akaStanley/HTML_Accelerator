@@ -183,8 +183,8 @@
       ],
       "track_widths": [
         0.0,
-        0.284,
-        0.3236,
+        0.2,
+        0.4,
         0.5,
         0.75,
         1.0
@@ -474,9 +474,9 @@
       {
         "bus_width": 12,
         "clearance": 0.09,
-        "diff_pair_gap": 0.23,
+        "diff_pair_gap": 0.0,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2174,
+        "diff_pair_width": 0.0,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.2,
@@ -484,6 +484,23 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.276,
+        "via_diameter": 0.0,
+        "via_drill": 0.0,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.0,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.0,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.2,
+        "name": "50_EMMC_Surface",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2939,
         "via_diameter": 0.0,
         "via_drill": 0.0,
         "wire_width": 6
@@ -573,7 +590,7 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "85ohm_inner",
+        "netclass": "85ohm_surface",
         "pattern": "*85_*"
       },
       {
@@ -581,8 +598,16 @@
         "pattern": "*90_*"
       },
       {
-        "netclass": "50_EMMC",
+        "netclass": "50_EMMC_Surface",
         "pattern": "*DATA*"
+      },
+      {
+        "netclass": "50_EMMC_Surface",
+        "pattern": "*CLK*"
+      },
+      {
+        "netclass": "50_EMMC_Surface",
+        "pattern": "*CMD*"
       }
     ]
   },

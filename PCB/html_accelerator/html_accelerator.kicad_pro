@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.16,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.4
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -70,7 +70,12 @@
           "width": 0.2507
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "courtyards_overlap|200530000|51580000|7a2f6301-48bc-45c8-960b-ddba81eff5be|bdbf7b26-f33a-4605-a951-db33c34c1aa6",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -88,7 +93,7 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
-        "footprint_filters_mismatch": "ignore",
+        "footprint_filters_mismatch": "warning",
         "footprint_symbol_field_mismatch": "warning",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "warning",
@@ -128,12 +133,12 @@
         "too_many_vias": "error",
         "track_angle": "error",
         "track_dangling": "warning",
-        "track_not_centered_on_via": "ignore",
+        "track_not_centered_on_via": "warning",
         "track_on_post_machined_layer": "error",
         "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
-        "tuning_profile_track_geometries": "ignore",
+        "tuning_profile_track_geometries": "warning",
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
@@ -529,7 +534,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.0,
+        "via_diameter": 0.3,
         "via_drill": 0.0,
         "wire_width": 6
       },
@@ -537,7 +542,6 @@
         "bus_width": 12,
         "clearance": 0.09,
         "diff_pair_gap": 0.0,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.0,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -548,15 +552,14 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.276,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       },
       {
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.0,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.0,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -567,15 +570,14 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2939,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       },
       {
         "bus_width": 12,
         "clearance": 0.09,
         "diff_pair_gap": 0.23,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2494,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -586,15 +588,14 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       },
       {
         "bus_width": 12,
         "clearance": 0.09,
         "diff_pair_gap": 0.15,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2593,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -605,15 +606,14 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       },
       {
         "bus_width": 12,
         "clearance": 0.09,
         "diff_pair_gap": 0.23,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2174,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -624,15 +624,14 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       },
       {
         "bus_width": 12,
         "clearance": 0.09,
         "diff_pair_gap": 0.15,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2223,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -643,8 +642,8 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.0,
-        "via_drill": 0.0,
+        "via_diameter": 0.3,
+        "via_drill": 0.2,
         "wire_width": 6
       }
     ],

@@ -76,6 +76,17 @@
 					)
 				)
 			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "ki_keywords" "LED diode"
 				(at 0 0 0)
 				(show_name no)
@@ -336,18 +347,6 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(text "TOdo:\nplace PCB and see how much space left for all the LEDs"
-		(exclude_from_sim no)
-		(at 115.57 62.23 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "077c9a77-d4b1-4751-b553-6241e7e148fa")
 	)
 	(junction
 		(at 63.5 50.8)
@@ -710,8 +709,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 55.88 77.47 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -789,8 +789,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 55.88 68.58 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -868,8 +869,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 55.88 59.69 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -947,8 +949,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 55.88 50.8 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

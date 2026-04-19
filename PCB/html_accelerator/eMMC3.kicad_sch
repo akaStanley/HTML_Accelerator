@@ -225,6 +225,28 @@
 					)
 				)
 			)
+			(property private "KLC_S3.3" "The rectangle is not a symbol body but a graphical element"
+				(at 0 -12.7 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property private "KLC_S4.1" "Some pins are on 50mil grid to make the symbol small"
+				(at 0 -15.24 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "ki_keywords" "quartz ceramic resonator oscillator"
 				(at 0 0 0)
 				(show_name no)
@@ -309,18 +331,6 @@
 				)
 				(polyline
 					(pts
-						(xy 0 3.556) (xy 0 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0 -3.81) (xy 0 -3.556)
 					)
 					(stroke
@@ -376,9 +386,9 @@
 					)
 				)
 				(pin passive line
-					(at 0 5.08 270)
+					(at 0 -5.08 90)
 					(length 1.27)
-					(name "2"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -414,7 +424,8 @@
 				(pin passive line
 					(at 0 -5.08 90)
 					(length 1.27)
-					(name "4"
+					(hide yes)
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5076,16 +5087,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 87.63) (xy 36.83 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d93fa43-bde4-4e2e-a03f-993d8814de74")
-	)
-	(wire
-		(pts
 			(xy 148.59 111.76) (xy 146.05 111.76)
 		)
 		(stroke
@@ -5093,16 +5094,6 @@
 			(type default)
 		)
 		(uuid "5deaa1eb-9889-4695-be1c-587005d73ef4")
-	)
-	(wire
-		(pts
-			(xy 41.91 90.17) (xy 41.91 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62402b5c-1b1f-4ea8-96b9-8e4335125c62")
 	)
 	(wire
 		(pts
@@ -5663,16 +5654,6 @@
 			(type default)
 		)
 		(uuid "eae2bf93-cf1a-465e-a1e3-077c9b2d6332")
-	)
-	(wire
-		(pts
-			(xy 36.83 87.63) (xy 36.83 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0aab6a7-b50c-44da-abaf-2ce6d4c8370a")
 	)
 	(wire
 		(pts
@@ -6931,8 +6912,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Four pin crystal, GND on pins 2 and 4"
 			(at 41.91 95.25 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8581,84 +8563,6 @@
 				(path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59"
 					(reference "U6")
 					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 36.83 90.17 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "846c18cb-c411-426b-a556-c612fd457bab")
-		(property "Reference" "#PWR058"
-			(at 36.83 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 36.83 94.3055 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 36.83 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 36.83 90.17 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "480a081f-bdcf-4617-bafb-08f370f9584c")
-		)
-		(instances
-			(project "html_accelerator"
-				(path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7/e4cf78dc-8e0c-4eaf-ac6f-547ec39b6f59"
-					(reference "#PWR058")
-					(unit 1)
 				)
 			)
 		)

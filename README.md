@@ -40,14 +40,7 @@ The next step in any good product creation was to draw up a shiny and complete b
 - Add in some extra power (red) and that is it  
 
 ![Block Diagram](images/HMTL_Accel_Block_Diagram.jpg)  
-
-# Step 3: PCB Schematics
-🤓 _Nerd Alert:_ Skip to [Step 4](#Step-4:-PCB-Layout) if you would rather see cool pictures of the PCB layout than learn about EMMc read/write speeds.  
-Moving right along, the task at hand was to convert the shiny block diagram into an actual schematic. For obvious reasons I was doing this on my own time and therefor didn't have access to the fancy PCB and Schematic tools I used when the sun was up. Instead I turned to an old friend: [KiCAD](https://www.kicad.org/).  
-Fun fact, CERN (yeah the giant Particle Accelerator in Switzerland one) supported the development of KiCAD for ~five years, up until about the release of KiCAD v5.0.  Their goal was to bring it up to par with commercial circuit drafting tools.   
-It has come a long way since its first release in 1992, but I have used it mainly for simple two-layer circuit boards with a single page schematic. A far cry from the "industrial sized" schematics that make up an iPhone main logic board. The "Dumb Project" would be my first attempt at something this complex in KiCAD.  
-
-To summarize, I ended up choosing several effectively obsolete (more on that later) silicon chips in order to keep the design as manageable and low cost (hah) as possible. This was a joke after all.  
+To summarize, I ended up choosing several effectively obsolete silicon chips (more on that later) in order to keep the design as manageable and low cost (hah) as possible. This was a joke after all.  
 PCIE Gen 2.0 and Windows Vista were both released in 2007. I also opted for USB 2.0 flash architecture because USB 3.0 drives were not widely available until about six years later in 2013 and because EMMC chips get pretty expensive in low quantities. Remember, the first part of my plan was to get a _slow_ computer. Additionally the requirements for ReadyBoost are very easy to achieve with the aforementioned tech:  
 
 | ReadyBoost Minimum Reqs:|
@@ -60,10 +53,13 @@ PCIE Gen 2.0 and Windows Vista were both released in 2007. I also opted for USB 
 
 The USB 2.0 Spec tops out at about 60MB/s (in practice systems see around 20MB/s max) so choosing devices that support this seems like it should work.  
 I ended up (accidentally) choosing an eMMC (Flash memory chip) that was used in the Xbox 360 released in 2013. The datasheet conveniently blanks out the transfer speeds, though I was able to find documents supporting up to a  130MB/s seq 1MB read and 10MB/s write. That should be plenty fast enough to compete with the 1~2MB/s 4k rand read speeds of spinning disk drives of the era.
+# Step 3: PCB Schematics
+🤓 _Nerd Alert:_ Skip to [Step 4](https://github.com/akaStanley/HTML_Accelerator#step-4-pcb-layout) if you would rather see cool pictures of the PCB layout than learn about EMMc read/write speeds.  
+Moving right along, the task at hand was to convert the shiny block diagram into an actual schematic. For obvious reasons I was doing this on my own time and therefor didn't have access to the fancy PCB and Schematic tools I used when the sun was up. Instead I turned to an old friend: [KiCAD](https://www.kicad.org/).  
+Fun fact, CERN (yeah the giant Particle Accelerator in Switzerland one) supported the development of KiCAD for ~five years, up until about the release of KiCAD v5.0.  Their goal was to bring it up to par with commercial circuit drafting tools.   
+It has come a long way since its first release in 1992, but I have used it mainly for simple two-layer circuit boards with a single page schematic. A far cry from the "industrial sized" schematics that make up an iPhone main logic board. The "Dumb Project" would be my first attempt at something this complex in KiCAD.  
 
-The rest of [the schematic](https://github.com/akaStanley/HTML_Accelerator/blob/main/PCB/html_accelerator_04252026.pdf) is pretty self explanatory, except for the [greebles](https://en.wikipedia.org/wiki/Greeble) page. Full of things that serve no electrical purpose other than to fill out the PCB with more stuff to make it look more like the one advertised in the meme.
-
-
+[The schematic](https://github.com/akaStanley/HTML_Accelerator/blob/main/PCB/html_accelerator_04252026.pdf) is pretty self explanatory, except for the [greebles](https://en.wikipedia.org/wiki/Greeble) page. Full of things that serve no electrical purpose other than to fill out the PCB with more stuff to make it look more like the one advertised in the meme. Below are the main resources I used to help me connect it all together:
 
 ## PCIE Pinout
 A helpfull [pinout guide](https://pinoutguide.com/Slots/pci_express_pinout.shtml) for the PCIE slot. The eagle eyed among you will have already noticed that the meme shows a full 16x slot but we only need 2x for this project; the rest are just for show.
@@ -71,7 +67,7 @@ A helpfull [pinout guide](https://pinoutguide.com/Slots/pci_express_pinout.shtml
 ## Reference USB Drive design
 This was originally posted as a free project design on PCBWay but has since [disappeared](https://web.archive.org/web/20250427142059/https://www.pcbway.com/project/shareproject/USB_flash_drive_AU6438.html). I used it to make sure my implementation of the Alcor Micro AU6438BS would at least work. As I quickly found out, the details application notes and datasheets I was used to at work were few and far between. In many cases they actually disappeared off the web as I was working on this project.  
 My only assumption is manufacturers kept them around for a decade and wiped them from existence as parts became EOL (End of Life) and stopped manufacturing.  
-![Block Diagram](datasheets/FlashDrive_SCH.jpg)  
+![Block Diagram](Datasheets/FlashDrive_SCH.jpg)  
 
 ## PCIE Bridge Reference design
 I chose the MCS9990 because the vendor ASIX published the design files for their [evaluation board](https://web.archive.org/web/20250717152222/https://www.asix.com.tw/en/product/Interface/PCIe_Bridge/MCS9990). It is now removed from the web, I've linked a semi complete archive for posterity. Conveniently the demo they have chosen is a PCIE to 4-port USB drive, shown below. When combined with the reference USB drive I _should_ have all the complex stuff proven out.
@@ -81,11 +77,11 @@ I chose the MCS9990 because the vendor ASIX published the design files for their
 # Step 4: PCB Layout
 Any PCB layout designer worth their salt starts their layout with a stackup. This is usually not something you need to consider unless you have impedance controlled signals on your board. In this case we have 50, 85, and 90Ω traces so it is critical that we define the width of our signal routes in relation to the dielectric and copper thickness of our PCB sandwich.  
 The [JLCPCB Impedance Calculator](https://jlcpcb.com/pcb-impedance-calculator) makes quick work of this, and even has built in support for their standard material.
-![PCB Stackup](datasheets/ImpedanceControlNets.jpg)  
-Skipping the boring parts, this gets loaded into the PCB layout tool and helps define all the proper geometry.  
+![PCB Stackup](Datasheets/ImpedanceControlNets.jpg)  
+Skipping the boring parts, this gets loaded into the PCB layout tool and helps define all the rules to ensure proper geometry. KiCAD by default has pretty limited constraint tools but for the scope of this project that is fine.  
 ![PCB layout](images/PCBLayout1.jpg)  
-The little wiggles you see on the circuit board are not just for show (at least not the decorative ones). For high-speed differential pairs like PCIE it is critical that the P and N nets are matched in length from star to finish.  
-Simply put the signals are transmitted from the host and are required to reach the destination at the same time, with a small margin of error. By adding wiggles or "length matching" to the shorter trace, the electrons have a physically longer distance to travel so they both arrive at the same time.  
+The little wiggles you see on the circuit board are not just for show (at least not the decorative ones). For high-speed differential pairs like PCIE it is critical that the Positive and Negative nets are matched in length from start to finish.  
+Simply put, the signals are transmitted from the host and are required to reach the destination at the same time, with a small margin of error. By adding wiggles or "length matching" to the shorter trace, the electrons speeding down the wire will have a physically longer distance to traverse so they both arrive at the same time.  
 ![Tuning the diff pair lengths to match](images/diffpairLengthTuning.jpg)  
 More advanced PCB editors allow for dynamic length matching along the route, but here I just manually add once per net phase to bring them within the . Aside the P-N (Intra pair skew) there is also a lane-to-lane (Inter pair skew) requirement. For PCIE 2.0 it is quite forgiving, allowing up to ~50mm delta.
 
@@ -93,8 +89,15 @@ I ended up using a 4-layer stackup for this design with drilled vias because of 
 To help with signal integrity I routed the impedance controlled nets (PCIE, USB, EMMC) only on L1 and L4 to reduce the effect from via stubs. That is the part of copper which carries no signal when connecting between layers) 
 ![PCB layout](images/PCBLayout2.jpg)  
 
-After reviewing the DRC (Design Rule Check) results to make sure everything I just talked about is implemented properly, its time to export and check the gerber files
-![Top side gerbers showing silkscreen](images/PCBLayout3.jpg) 
+After reviewing the DRC (Design Rule Check) results to make sure everything I just talked about is implemented properly, its time to export and check the gerber files. This is what gets sent to the PCB manufacturing factory in order to actually produce the circuit board. Each layer represents a different step of the manufacturing process. At the end when you have completed them all, you will have a bare circuit board.  
+![Gerbers showing the top side traces, drilled holes, exposed copper, and silkscreen](images/PCBLayout4.jpg)  
+
+
+# Step 5: PCB Assembly
+This is where things got interesting (for me at least).
+
+![Abridged ordering chat](images/PCB_MaterialSpec.jpg)  
+
 
 ## Special order chips:
 Order for single PCB below.  
@@ -104,13 +107,13 @@ QTY 4: H26M31003 (FBGA153 11.5x13mm) (H26M31003GMR)
 
 I ended up searching on Aliexpress for the parts because obviously they are all obsolete and not sold on Digikey etc. I found several sellers each with one of the chip but sent DMs to each one with an simple RFQ (Request for quotation) and this one was the most promising.  
 After confirming intent and successfully moving the "business" to a WeChat thread (Aliexpress does not condone sending payment outside the platform for obvious reasons) I was able to get the parts packaged and sent directly to JLCPCB as consigned material.   
-![Abridged ordering chat](images/Aliexpres-Wechat_ChipOrder.jpg)
+![Abridged ordering chat](images/Aliexpres-Wechat_ChipOrder.jpg)  
 
 In parallel I submitted a part consignment request to JLCPCB so they can solder the parts directly to the PCB once it's fabbed. The rest of the stuff on the BOM are easy to get and supported directly by in the JLCPCB standard parts on hand.  
-![JLC PCB part consignment request](JLC_ConsignParts_request.jpg)
+![JLC PCB part consignment request](images/JLC_ConsignParts_request.jpg)  
 
 After that all I had to do was wait and hope the parts arrived to the PCB assembly warehouse where "Chris" would recieve the package ;)  
-![JLC consigment order in transit](images/placeholder.jpg)
+![JLC consigment order in transit](images/placeholder.jpg)  
 
 
 # Mechanical

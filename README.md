@@ -80,3 +80,7 @@ Est cost as of 4/18/26 = 244$ incl shipping (not including assembly)
 | UL Marking | Yes (Specify Position) |
 
 ## Todo:
+- Update schematic with Part numbers
+- Order pcbway
+- Order aliexpress: heatsinks, 3 special chips, soldering tools?
+- more documentation to readme (firefox tabs to be saved here)

@@ -6,8 +6,10 @@
 	(paper "A4")
 	(title_block
 		(title "HTML Accelerator")
-		(date "2024-10-07")
+		(date "2026-04-25")
 		(rev "1.0")
+		(company "Spencer K")
+		(comment 1 "https://github.com/akaStanley/HTML_Accelerator")
 	)
 	(lib_symbols)
 	(rectangle
@@ -9801,7 +9803,7 @@
 		(instances
 			(project "html_accelerator"
 				(path "/12b3a7c9-141f-40ba-9ebb-094b58bfa6c7"
-					(page "7")
+					(page "15")
 				)
 			)
 		)
@@ -9874,6 +9876,8 @@
 			(effects
 				(font
 					(size 3 3)
+					(thickness 0.6)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -9919,6 +9923,8 @@
 			(effects
 				(font
 					(size 3 3)
+					(thickness 0.6)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -10010,6 +10016,8 @@
 			(effects
 				(font
 					(size 3 3)
+					(thickness 0.6)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -10101,6 +10109,8 @@
 			(effects
 				(font
 					(size 3 3)
+					(thickness 0.6)
+					(bold yes)
 				)
 				(justify left bottom)
 			)

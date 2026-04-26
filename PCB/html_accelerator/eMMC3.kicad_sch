@@ -4,6 +4,13 @@
 	(generator_version "10.0")
 	(uuid "e6f21d36-7477-437c-a5a3-0c7c9f06568c")
 	(paper "A4")
+	(title_block
+		(title "HTML Accelerator")
+		(date "2026-04-25")
+		(rev "1.0")
+		(company "Spencer K")
+		(comment 1 "https://github.com/akaStanley/HTML_Accelerator")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
@@ -6111,7 +6118,7 @@
 				)
 			)
 		)
-		(property "Value" "EMMC_4G"
+		(property "Value" "H26M31003"
 			(at 224.79 47.2581 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7441,7 +7448,7 @@
 				)
 			)
 		)
-		(property "Value" "EMMC_4G"
+		(property "Value" "H26M31003"
 			(at 172.72 47.2581 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8055,7 +8062,7 @@
 				)
 			)
 		)
-		(property "Value" "EMMC_4G"
+		(property "Value" "H26M31003"
 			(at 262.89 47.2581 0)
 			(show_name no)
 			(do_not_autoplace no)

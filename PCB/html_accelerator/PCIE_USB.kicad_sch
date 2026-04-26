@@ -5,9 +5,11 @@
 	(uuid "2e1b35ab-f4cc-403e-b2a0-a395d9313e9a")
 	(paper "A4")
 	(title_block
-		(title "USB, 5v POWER")
-		(date "2024-09-15")
-		(rev "1")
+		(title "HTML Accelerator")
+		(date "2026-04-25")
+		(rev "1.0")
+		(company "Spencer K")
+		(comment 1 "https://github.com/akaStanley/HTML_Accelerator")
 	)
 	(lib_symbols
 		(symbol "Device:C"

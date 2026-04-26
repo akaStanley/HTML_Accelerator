@@ -72,19 +72,15 @@
       ],
       "drc_exclusions": [
         [
-          "clearance|185060000|129674811|5a5c455a-a02f-47bf-8d99-9556a8ad6847|ceb823de-a662-4567-be7b-ba411a7688a7",
+          "clearance|183860000|127646240|eefaa4a4-8327-4fba-a604-fc2e074e0545|ff23e43b-ecdb-4ed4-9f17-a4d52becf5bf",
           ""
         ],
         [
-          "clearance|185060000|129674811|5a5c455a-a02f-47bf-8d99-9556a8ad6847|f79422d0-5182-4650-8419-691183d1d9cd",
+          "clearance|185460000|129985000|2bb34619-c761-46d9-b906-7f68d8dae7bf|c9a7283d-6b40-4273-aba8-a51318ab98b8",
           ""
         ],
         [
           "clearance|223247618|82372180|3ba04120-328c-4cc2-add7-e0353e92b645|e8bc76be-641d-4878-bbfd-1b3c303defab",
-          ""
-        ],
-        [
-          "connection_width|187319824|111838419|0c79f349-2ed9-4010-9a13-0f85440c50dc|00000000-0000-0000-0000-000000000000",
           ""
         ],
         [
@@ -97,10 +93,6 @@
         ],
         [
           "courtyards_overlap|200530000|51580000|1f12bc7a-df46-4ea8-bdbe-ea5bf8bd2a81|b207127a-e95d-4b0b-bfe0-c2f54bbb4546",
-          ""
-        ],
-        [
-          "diff_pair_gap_out_of_range|185460000|129289906|5a5c455a-a02f-47bf-8d99-9556a8ad6847|f79422d0-5182-4650-8419-691183d1d9cd",
           ""
         ],
         [

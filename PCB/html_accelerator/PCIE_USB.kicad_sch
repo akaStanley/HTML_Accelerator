@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "HTML Accelerator")
-		(date "2026-04-25")
+		(date "2026-04-29")
 		(rev "1.0")
 		(company "Spencer K")
 		(comment 1 "https://github.com/akaStanley/HTML_Accelerator")

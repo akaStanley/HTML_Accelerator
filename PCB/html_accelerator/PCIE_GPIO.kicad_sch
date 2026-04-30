@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "HTML Accelerator")
-		(date "2026-04-25")
+		(date "2026-04-29")
 		(rev "1.0")
 		(company "Spencer K")
 		(comment 1 "https://github.com/akaStanley/HTML_Accelerator")
@@ -16658,7 +16658,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "20pF"
 			(at 62.23 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18871,7 +18871,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "20pF"
 			(at 46.99 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -210,4 +210,3 @@ That works out to each assembled PCB costing about 100$ (haha, all for joke?!)
 - Order pcbway
 - Order aliexpress: heatsinks, 3 special chips, soldering tools?
 - more documentation to readme (firefox tabs to be saved here)
-

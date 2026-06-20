@@ -7646,7 +7646,7 @@
 		(fields_autoplaced yes)
 		(uuid "704c6a97-aa1a-46cc-bed2-66ca8c1bedab")
 		(property "Reference" "D1"
-			(at 120.142 148.9623 90)
+			(at 120.65 148.5899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7657,7 +7657,7 @@
 			)
 		)
 		(property "Value" "SBR2U30P1"
-			(at 120.142 150.8833 90)
+			(at 120.65 151.1299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7667,7 +7667,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "html_accel_footprints:DIODE_SBR3M30P1_1P78X2P8_DIO-M"
+		(property "Footprint" "html_accel_footprints:DIODE_SBR2U30P1"
 			(at 118.11 149.86 0)
 			(hide yes)
 			(show_name no)

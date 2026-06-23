@@ -20,6 +20,7 @@ I thought for a long time (at least two minutes, maybe more) until I realized. I
 
 After going deep down a Wikipedia rabbit hole of esoteric computer PCIE cards, I remembered that curious little popup that used to appear when I would plug in a thumb drive to the family PC:  
 ![Speed up my system](images/readyboost.jpg)  
+
 "Speed up my system" Bingo.  
 To summarize [ReadyBoost](https://en.wikipedia.org/wiki/ReadyBoost), it functions as a small cache alongside your hard drive and allows your computer to quickly access a few files in parallel from both. On older computers with spinning disk drives and 512MB of DDR2 RAM it's been documented to speed up operations by as much as 80%! Of course, today's SSDs and DDR5 RAM run laps around a dusty old USB2.0 thumb drive and in fact, Microsoft has totally removed ReadyBoost from Windows 11.  
 
@@ -78,11 +79,13 @@ I chose the MCS9990 because the vendor ASIX published the design files for their
 Any PCB layout designer worth their salt starts their layout with a stackup. This is usually not something you need to consider unless you have impedance controlled signals on your board. In this case we have 50, 85, and 90Ω traces so it is critical that we define the width of our signal routes in relation to the dielectric and copper thickness of our PCB sandwich.  
 The [JLCPCB Impedance Calculator](https://jlcpcb.com/pcb-impedance-calculator) makes quick work of this, and even has built in support for their standard material.
 ![PCB Stackup](Datasheets/ImpedanceControlNets.jpg)  
+
 Skipping the boring parts, this gets loaded into the PCB layout tool and helps define all the rules to ensure proper geometry. KiCAD by default has pretty limited constraint tools but for the scope of this project that is fine.  
 ![PCB layout](images/PCBLayout1.jpg)  
 The little wiggles you see on the circuit board are not just for show (at least not the decorative ones). For high-speed differential pairs like PCIE it is critical that the Positive and Negative nets are matched in length from start to finish.  
 Simply put, the signals are transmitted from the host and are required to reach the destination at the same time, with a small margin of error. By adding wiggles or "length matching" to the shorter trace, the electrons speeding down the wire will have a physically longer distance to traverse so they both arrive at the same time.  
 ![Tuning the diff pair lengths to match](images/diffpairLengthTuning.jpg)  
+
 More advanced PCB editors allow for dynamic length matching along the route, but here I just manually add once per net phase to bring them within the . Aside the P-N (Intra pair skew) there is also a lane-to-lane (Inter pair skew) requirement. For PCIE 2.0 it is quite forgiving, allowing up to ~50mm delta.
 
 I ended up using a 4-layer stackup for this design with drilled vias because of cost. This means the vias are drilled through the entire board from Layer 1-->4 after the copper layers are sandwiched together. This means even if you want to connect from Layer 1-->2 the via will be drilled and connect 1-->4.  
@@ -118,13 +121,35 @@ After confirming intent and successfully moving the "business" to a WeChat threa
 
 In parallel I submitted a part consignment request to JLCPCB. This is what a customer does when the parts used in their design are not available for the PCB Assembly house to buy directly. For example, Apple consigns their CPU silicon chip to vendors because it is proprietary. In my case, the chips are just old.  
 ![JLC PCB part consignment request](images/JLC_ConsignParts_request.jpg)  
-The rest of the parts on the BOM (Bill of Materials) are easy to get and supported directly from the JLCPCB standard parts they have on hand.  
-After that all I had to do was wait and hope the parts arrived to the PCB assembly warehouse where "Chris" would receive the package ;)  
-![JLC consigment order in transit](images/placeholder.jpg)  
+
+The rest of the parts on the BOM (Bill of Materials) are easy to get and supported directly from the JLCPCB standard parts they have on hand through the standard SMT component market.  
+After that all I had to do was wait and hope the parts arrived to the PCB assembly warehouse where "Chris" would receive the package and everything would happen just like normal.  
+
+![Your order has shipped](images/WechatShipping.jpg)  
+To my delight the package was actually shipped and delivered on the same day. "Wow shipping only took 16 hours, that's so fast!" Yes... but the parts only had to travel about 30 miles from the Huaqiangbei market in Shenzhen to the JLC PCB factory near Macau.  
+
+![Just a short journey](images/HQBtoJLC.jpg)     
+
+And then I got my first email...
+
+![Dear Customer](images/invoiceReview.jpg)     
+At this moment I heard the record scratch and thought "I can't go to jail for this! I just need to do what anyone else would do when faced with filling out an official form asking you to explain how much you just paid for something for tax purposes."  
+Just li-  
+List out the true and verifiable reasons why your only option was to buy these obsolete parts from your business partner for a very reasonable price and hope that is enough.  
+![Thorough review and verification](images/invoiceReview2.jpg)    
+ 
+Thankfully that was the last I ever heard from the bean counters and I was legally in the clear.  
+Until the next email which did not "find me well"
+![This email did not find me well](images/dearCustomer.jpg)    
+It was at this moment that I realized the EMMC footprint I had on my PCB did not actually appear to match the BGA-153 package. The ones I had just finished explaining to the local officials what a smoking discount I finagled in purchasing.
+![oooo she spin](images/RotatedFootprint.jpg)    
+Good thing I had waited until my parts arrived before submitting the PCB gerbers. As luck would have it, the footprint was actually correct the entire time. Only the custom component body outline and pin 1 marking I proudly added myself were rotated 90 degrees counter-clockwise. A quick check against a standard online part confirmed this.  
+With this resolved, the _loose and bulk component_ issues was actually just a notice telling me that I hadn't made it worth their time to charge me a few cents to put the chips into the proper tray for their pick-and-place machine. Nice!
+ 
 
 ## Buying the PCB:
-Now that we have the parts taken care of, we can officially submit the gerbers and order the PCB Assembly. My original plan was to assemble these boards myself at home, but as the number of parts reached its final tally of 155 I realized I would need a lot of boba in order to make it through soldering almost 800 parts across the five cards I planned to build.  
-This led me to [JLCPCB](https://cart.jlcpcb.com/quote) who I just now realized should be sponsoring this adventure... Nevertheless, they offer a turnkey PCB fab and assembly service that is just what I need. (They also offer a metal CNC service that I used to fix my paper shredder, but that's a story for a different time)  
+Now that we have the parts taken care of, we can officially submit the gerbers and order the PCB Assembly. My original plan was to assemble these boards myself at home. However, as the number of parts reached a final tally of 155, I realized I would need a lot of boba in order to make it through soldering almost 800 parts across the five cards I planned to build. Not to mention the shiny new hot-air reflow soldering iron I would need to buy.
+Naturally this led me to [JLCPCB](https://cart.jlcpcb.com/quote) who I just now realized should be sponsoring this adventure... Nevertheless, they offer a turnkey PCB fab and assembly service that is just what I need. (They also offer a metal CNC service that I used to fix my paper shredder, but that's a story for a different time)  
 
 | Detail | Spec |
 | ------ | ---- |
@@ -155,6 +180,10 @@ This led me to [JLCPCB](https://cart.jlcpcb.com/quote) who I just now realized s
 
 </details>
 
+Now all that was left was to upload my exported BOM, x-y coordinate file for each component and review the placement with their built in DFM guide. It lets you preview the 3D component body and even confirm the pin 1 location is matching with your design file. If you look you can even see something wrong that I did not notice until much later that caused me great pain and sorrow.
+![3D component placement review, looks good to me](images/confirmAssembly.jpg)  
+The final step was to transfer $395.83 more American dollars overseas to seal my fate (this was the easiest part because they actually just take PayPal).  
+![Stay in school kids, or you too will fall prey to the hobby of PCB fabrication](images/OrderUp.jpg)  
 
 
 ## Finishing Touches
@@ -173,7 +202,7 @@ This turned out to actually be _impossible_ to find. I literally took a trip to 
 Feeling sad I turned once again to my favorite website where you can buy anything: Aliexpress. After a getting warmer, I thought I had struck gold with a very obscure listing for a DELL RAID controller from 2010.  
  ![Taking a crack at Aliexpress sleuthing](images/BracketOrders.jpg)
 
-Much to my dismay this is what arrived a week later. No dice. The solution then, was to take some artistic liberties and make this a feature not a bug.  
+Much to my dismay this is what arrived a week later. No dice. The solution then, was to take some artistic liberties (as if this whole thing wasn't already entirely fictional).
  ![Holy Bracket--and not the good kind!](images/holyBracketBatman.jpg)
 
 

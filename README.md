@@ -252,7 +252,7 @@ You can't have an electronics project without some diode shenanigans. Seriously,
 
 To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will tell you exactly what went wrong:  
 ## The problem
-Remember back in the [assembly section](#-Buying-the-PCB-itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
+Remember back in the [assembly section](#-Buying-the-PCB-itself) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
 ![Mr Diode we meet again](images/diode.jpg)  
 
 But wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. But in their file the small pin of the diode is 2 where in my PCB that is the larger pin. Ok, so it could only be installed one way, but who has the wrong footprint Me, or JLC PCB?  
@@ -303,7 +303,7 @@ According to the Dell service tag lookup the warranty for this computer expired 
 
 <details>
 
-<summary>Expand for a portal to Dell.com 18 years ago</summary>
+<summary>Expand to travel back in time 18 years to Dell.com</summary>
 
 That equals about 705$ in 2026 dollars. Not great, not terrible.  
 Sadly the monitor did not seem to have survived two decades on this earth, but that's ok I'm only here for Windows Vista.
@@ -319,7 +319,7 @@ I will preface this with: I am an Electrical Engineer and I started this project
 I have been led to believe that my hardware design will just _show up_ as a ReadyBoost capable drive without needing any special drivers or tools and therefore:  
 1. Plug in the HTML Accelerator & boot the PC
 2. Windows Vista will recognize the device, load generic drivers, and prompt me to enable ReadyBoost
-3. Find some test to prove the Accelerator actually made certain activities faster
+3. Find some test to prove the Accelerator actually made any activities faster
 
 ## The Plan: very complex step 0
 I needed to make sure the nearly two-decade old computer actually worked. Just getting the PC booted proved to be a monumental task. Of course the CMOS battery died years ago causing the windows license to falsely expire, three different sticks or RAM were installed-causing a POST failure, and for some reason having the CD-ROM drive attached caused the CPU fan to get stuck at 100%. After clearing those hurdles the next big one was getting this thing back online.  
@@ -362,43 +362,76 @@ A flurry of devices were installed and opened device manager to check the [devic
 This is where my good luck seemed to have run dry.  
 To make a long story short, I started doing more research about EMMC, flash drives, and faulty chips. It led me ultimately to a gold mine I wish I had discovered before embarking on this journey three years ago: `usbdev.ru`    
 At first I thought this was the last thing my Antivirus-less Vista box would see before falling victim to ransomware. Instead it was an immense amount of information, tools, and tutorials all written in Russian. Which explains why my quick research into this project didn't surface much.  
-Google tends to show you things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain.  
-However, I did, and conveniently Firefox's built in translation works quite nicely on my modern PC, so I began digging through the pages, transferring files with a USB drive (ironically) over to the Vista Machine. I've attached a post-translation screengrab of the Alcor section for reference. 
+Google nowadays tends to show you only things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain.  
+However, I did, and conveniently Firefox's built in translation works quite nicely on my modern PC.I've attached a post-translation screengrab of the Alcor section for reference. 
 ![Translated from Russian](images/USBDEV.jpg)  
+
+This site literally had everything I wished I knew when drawing the block diagram. Full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  
+By this point I had narrowed my trouble down to the Alcor `AU6438BS`. The IC I had chosen to emulate a USB<->EMMC card reader, solely based on a [reference design](#reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the sit. The few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted or bought from the dark side of Aliexpress (it all comes full circle).  
+The advice:  
+_"Card readers—and consequently the flash drives made from them—are generally difficult to repair. Stay Away"_  
+
+And I, of course, chose to ignore that advice and began digging through the pages, transferring files with a USB drive (ironically) over to the Vista Machine in a futile attempt to review the storage controller.
 ![I tried everything](images/toolsTools.jpg)  
 
-This site literally had everything I wished I knew, full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  By this point I had narrowed my troubles down to the Alcor `AU6438BS` IC i had chosen to emulate a USB<->EMMC card reader, solely based on that [reference design](#reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site, and what few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted to them or bought on a sleezy website.  
-The advice: 
-_"Card readers—and consequently the flash drives made from them—are generally difficult to repair. Stay Away"_  
+I have a few theories as to what may have happened
+1. Because I bought my chips from, lets call it the "shadowy side" of Aliexpress, there is no guarantee that they actually work (I knew this going in)
+2. The chips are fine but due to the limited datasheets, I am missing some key electrical integration
+3. X-rays are known to damage non-volatile storage, corrupting data and flipping bits and I totally forgot about this when approving the design review procedures. When JLCPCB took the 8 x-rays of my boards exposing only the EMMC and Alcor chips (and not the MCS PCIE chip) they could have been inadvertently erasing the firmware on the controller.
 
 ## The Plan: Step 3
 
+In the spirit of "the plan" (and because I already went through the trouble of setting up a whole good "bad computer") I felt I should at least _try_ to see if any USB device would actually make anything faster. By proxy that would mean, in theory my design was valid.
+
+I got an off the shelf USB3.0<-->MicroSD Card Reader, and attached a modern 64GB Sandisk Extreme Pro card to it. I knew this was way faster than the PC would handle, but I wanted to be sure the USB 2.0 link would be fully saturated, and that the test results would only show the net effect:
+![Ready to Boost](images/readyboostTest.jpg)
+
+I found an "period correct" version of CrystalDiskMark and ran a few tests.  
+Below is the before and after of enabling Windows ReadyBoost on a 2008 Dell Inspiron 530, with a 2GHz Intel Pentium Dual-core CPU, 2GB of Ram and a 230GB Hard Drive: (Higher numbers are better)
+![It does actually work, sort of](images/BoostBenefit.jpg)
+I've got to be honest and say, yeah I am a little disappointed. Probably should have spent the 20$ and done this test before starting this whole project. But I think that is on par with most people who actually used ReadyBoost.  
+It did make the **random** reads 76% faster almost the "up to 80% faster" claim I saw at the start. This makes sense because flash storage has much faster access times than physically moving the head of a spinning hard drive to the data location. You're commanding electrons versus a little robot arm.  
+I think the **sequential** read/write speeds are not affected because this is a nearly empty hard drive on a fresh installation of windows. So there is a lot of empty runway for the HDD to just write that data in one fell swoop. Younger readers may not have ever experienced the joy is de-fragmenting your hard drive so that all the common files were physically near each other on the platter. That act alone also made your computer faster.
+
+# Step 10: The End.
+
+I've said enough in the preceding 6k words, so I will be wrap it up quickly.
+
+- Did I achieve what I set out to do? Yes (mostly)
+- What have I learned along the way? Lots (some stuff more than I wanted)
+
+- How much did this all cost?
+	<details>
+	<summary>Itemized Breakdown</summary>
+	
+	| $ | Service |
+	|----|--------|
+	|121 | 5x Bare PCB manufacturing |
+	|119 | 5x PCB SMT Assembly & standard parts |
+	|158 | PCB Taxes, Shipping, Customs Duties |
+	|185 | "Obsolete" parts consigned to JLC |
+	|32  | Mechanical + Misc consumable parts|
+	|138 | Soldering and (new) test equipment|
+	|||
+	|**753**  | **Total (5 boards)** |
+	
+	That works out to about 150$ for each HTML Accelerator card.
+	
+	</details>
 
 
-![temp](images/temp.jpg)
+- Should you make your own? Actually, I have three more "working" boards, if you think you can revive the EMMC/Alcor chip, drop me a line and we can figure something out.
 
-# Step 10: Finale
+Thanks for joining me and I hope you learned something too.  
+~Spencer K, June 2026  
+
 
 placeholder [TODO image]:  
 ![Result](images/HTML-Accel_Spencer.jpg)
-As of this entry in June 2026 The cost breakdown is as follows:  
-
-| $ | Service |
-|---|-------------|
-|118 | 5x Bare PCB manufacturing |
-|108 | 5x PCB SMT Assembly & standard parts |
-|180 | "Obsolete" parts consigned to JLC |
-| tbd| Mechanical parts|
-|31 | Shipping to the USA |
-|||
-
-That works out to each assembled PCB costing about 100$ (haha, all for joke?!)
 
 
 ## Todo:
-- JPG capitalization file reference changes.
-- Readyboost test with fast USB
-- Finish writing the step 3 and summary
+- proofread and spellcheck
 - Promo photo with the final Card
 - Order aliexpress: heatsinks
 - more documentation to readme (firefox tabs to be saved here)

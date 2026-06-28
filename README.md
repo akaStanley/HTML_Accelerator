@@ -357,7 +357,7 @@ No explosions. Nice!
 Immediately I as greeted with the familiar device manager auto-installer popup. I was expecting to see something like a PCIE USB HUB and four SD card readers.   
 ![Your device is ready to use](images/firstbootimg.jpg)  
 A flurry of devices were installed and opened device manager to check the [device ID](https://linux-hardware.org/?id=pci:9710-9990-a000-4000) is reporting `9710-9990-A000-4000` as expected for the MCS chip, and it is!  
-![Device ID is correct and reporting](images/deviceID.jpg)  
+![Device ID is correct and reporting](images/deviceIDimg.jpg)  
 
 This is where my good luck seemed to have run dry.  
 To make a long story short, I started doing more research about EMMC, flash drives, and faulty chips. It led me ultimately to a gold mine I wish I had discovered before embarking on this journey three years ago: `usbdev.ru`    
@@ -365,7 +365,7 @@ At first I thought this was the last thing my Antivirus-less Vista box would see
 Google tends to show you things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain.  
 However, I did, and conveniently Firefox's built in translation works quite nicely on my modern PC, so I began digging through the pages, transferring files with a USB drive (ironically) over to the Vista Machine. I've attached a post-translation screengrab of the Alcor section for reference. 
 ![Translated from Russian](images/USBDEV.jpg)  
-![I tried everything](images/toolsToolsTools.jpg)  
+![I tried everything](images/toolsTools.jpg)  
 
 This site literally had everything I wished I knew, full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  By this point I had narrowed my troubles down to the Alcor `AU6438BS` IC i had chosen to emulate a USB<->EMMC card reader, solely based on that [reference design](#reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site, and what few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted to them or bought on a sleezy website.  
 The advice: 

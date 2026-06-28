@@ -55,7 +55,9 @@ PCIE Gen 2.0 and Windows Vista were both released in 2007. I also opted for USB 
 The USB 2.0 Spec tops out at about 60MB/s (in practice systems see around 20MB/s max) so choosing devices that support this seems like it should work.  
 I ended up (accidentally) choosing an eMMC (Flash memory chip) that was used in the Xbox 360 released in 2013. The datasheet conveniently blanks out the transfer speeds, though I was able to find documents supporting up to a  130MB/s seq 1MB read and 10MB/s write. That should be plenty fast enough to compete with the 1~2MB/s 4k rand read speeds of spinning disk drives of the era.
 # Step 3: PCB Schematics
-🤓 _Nerd Alert:_ Skip to [Step 4](https://github.com/akaStanley/HTML_Accelerator#step-4-pcb-layout) if you would rather see cool pictures of the PCB (Printed Circuit Board) layout than learn about EMMc read/write speeds.  
+🤓 _Nerd Alert:_  
+Skip to [Step 4](https://github.com/akaStanley/HTML_Accelerator#step-4-pcb-layout) if you would rather see cool pictures of the PCB (Printed Circuit Board) layout.  
+
 Moving right along, the task at hand was to convert the shiny block diagram into an actual schematic. For obvious reasons I was doing this on my own time and therefor didn't have access to the fancy PCB and Schematic tools I used when the sun was up. Instead I turned to an old friend: [KiCAD](https://www.kicad.org/).  
 Fun fact, CERN (yeah the giant Particle Accelerator in Switzerland one) supported the development of KiCAD for ~five years, up until about the release of KiCAD v5.0.  Their goal was to bring it up to par with commercial circuit drafting tools.   
 It has come a long way since its first release in 1992, but I have used it mainly for simple two-layer circuit boards with a single page schematic. A far cry from the "industrial sized" schematics that make up an iPhone main logic board. The "Dumb Project" would be my first attempt at something this complex in KiCAD.  
@@ -119,7 +121,7 @@ Not only did this seller have all three chips, the price they offered was cheape
 After confirming intent and successfully moving the "business" to a WeChat thread. (Aliexpress does not condone sending payment outside the platform for obvious reasons and makes it very hard to do so) I was able to get the parts prepped, packaged and sent directly to JLCPCB as consigned material. 
 ![Abridged ordering chat](images/Aliexpres-Wechat_ChipOrder.jpg)  
 
-In parallel I submitted a part consignment request to JLCPCB. This is what a customer does when the parts used in their design are not available for the PCB Assembly house to buy directly. For example, Apple consigns their CPU silicon chip to vendors because it is proprietary. In my case, the chips are just old.  
+In parallel I submitted a part consignment request to JLCPCB. This is what a customer does when the parts used in their design are not available for the PCB Assembly house to buy directly. For example, Apple consigns their CPU silicon chip to vendors because it is proprietary. In my case however, the chips are just _old_.  
 ![JLC PCB part consignment request](images/JLC_ConsignParts_request.jpg)  
 
 The rest of the parts on the BOM (Bill of Materials) are easy to get and supported directly from the JLCPCB standard parts they have on hand through the standard SMT component market.  
@@ -147,7 +149,7 @@ Good thing I had waited until my parts arrived before submitting the PCB gerbers
 With this resolved, the _loose and bulk component_ issues was actually just a notice telling me that I hadn't made it worth their time to charge me a few cents to put the chips into the proper tray for their pick-and-place machine. Nice!
  
 
-## Buying the PCB:
+## Buying the PCB itself:
 Now that we have the parts taken care of, we can officially submit the gerbers and order the PCB Assembly. My original plan was to assemble these boards myself at home. However, as the number of parts reached a final tally of 155, I realized I would need a lot of boba in order to make it through soldering almost 800 parts across the five cards I planned to build. Not to mention the shiny new hot-air reflow soldering iron I would need to buy.
 Naturally this led me to [JLCPCB](https://cart.jlcpcb.com/quote) who I just now realized should be sponsoring this adventure... Nevertheless, they offer a turnkey PCB fab and assembly service that is just what I need. (They also offer a metal CNC service that I used to fix my paper shredder, but that's a story for a different time)  
 
@@ -180,39 +182,110 @@ Naturally this led me to [JLCPCB](https://cart.jlcpcb.com/quote) who I just now 
 
 </details>
 
-Now all that was left was to upload my exported BOM, x-y coordinate file for each component and review the placement with their built in DFM guide. It lets you preview the 3D component body and even confirm the pin 1 location is matching with your design file. If you look you can even see something wrong that I did not notice until much later that caused me great pain and sorrow.
+Now all that was left was to upload my exported BOM, x-y coordinate file for each component and review the placement with their built in DFM guide. It lets you preview the 3D component body and even confirm the pin 1 location is matching with your design file. If you look closely you can even see something wrong that I did not notice until much later which caused me great pain and sorrow.
 ![3D component placement review, looks good to me](images/confirmAssembly.jpg)  
-The final step was to transfer $395.83 more American dollars overseas to seal my fate (this was the easiest part because they actually just take PayPal).  
+The final step was to transfer $395.83 more American dollars overseas to seal my fate. This was the easiest part because they actually just have PayPal checkout (thank you Steven).  
 ![Stay in school kids, or you too will fall prey to the hobby of PCB fabrication](images/OrderUp.jpg)  
+Then I had to wait because the factory closed in observance of the national Tomb-Sweeping Day holiday, but after that I got the confirmation my order was in production. Once started I could eagerly follow along as the board went through each process.   
+
+![text](images/PCBfabricationProcess.jpg)  
+
+If you want to learn more about what each step is and why there are so many I recommend this pair of videos that by Scotty from StrangeParts:  
+1. [PCB Factory Tour](https://youtu.be/ljOoGyCso8s?si=2lkWY2DBJYUQQylf)
+2. [PCB Assembly Process](https://youtu.be/24ehoo6RX8w?si=gfZVr_f7mtGMDlLo)
+
+One specific item I want to draw your attention to is the "X-Ray Inspection" step of the assembly process. This is a commonly done when soldering BGA components where you can not visually inspect the solder joints because they are hidden under the part. X-ray is used because it passes easily through fiberglass/resin/silicon materials and the resulting images shows the copper of the PCB and solder joints clearly.  
+
+The darker areas of the image are more dense (eg where the two PCBs are overlapping, the capacitors appearing as little black rectangles, and the internal structure of the USB chips). If you look closely at the zoomed in view on the right you can even see the faint silicon bondwires and two tiny capacitors inside the EMMC package. Neat!  
+Thankfully in my case, all the solder joints are healthy and there are no shorts or other defects. The board is now fully assembled and ready to test.  
+![text](images/xRayInspection.jpg)  
 
 
-## Finishing Touches
+# Step 6: Greebles
 
-## Heatsink
-I ordered several options for heatsink and figured one of them would be a good match to the original meme. This was surprisingly easy and a nice reprieve.
+Throughout the PCB design process I also needed to source a couple other accessories to make my design match as closely as possible to the original meme:
+
+## a) Heatsink
+I ordered several options for heatsink and figured one of them would be a good match to the original. This was surprisingly easy, and a nice reprieve.
  ![Heatsink options](images/HeatsinkOrder.jpg)
 
  
-## PCIE Bracket
+## b) PCIE Bracket
 On the other hand, finding a "Full height 85mm PCIE 85mm bracket without holes" was my final hurdle.
 
-This turned out to actually be _impossible_ to find. I literally took a trip to Shenzhen China February 2026 and spent the an entire day in Huaqiangbei. Nobody had brackets without holes that matched the meme photo... but I did not give up yet.  
- ![Adventures in HQB](images/BracketAdventure.jpg)
+This turned out to actually be _impossible_ to find. I literally took a trip to Shenzhen China February 2026 and spent the an entire day in Huaqiangbei. This was not my first visit to the market, and this time I has also had dome some research (shout-out [Bunnie's Guide to Shenzhen](https://www.bunniestudios.com/blog/2019/essential-guide-to-shenzhen-web-edition/)) so I knew roughly where I needed to start my search.  
+A nice vendor on the ground floor named Ms. Hu and I had a great conversation in (my elementary school level) Mandarin where I learned that she indeed could get me the exact bracket I showed her in the photo... by way of tooling up her factory and then churning out thousands of them. She kindly pointed me in the direction of Mr. Wen.  
+At his shop upstairs in another building we talked briefly before exchanging WeChat contacts and I learned he did not have what I was looking for, but another friend of his might.   
+ ![Adventures in HQB](images/BracketAdventure.jpg)  
+ 
+Throughout the rest of the day I met vendor after vendor, some conversations were long, some a simple shake of the head and a finger pointing across the hallway. I found many full height brackets, but they all had some cutout for a header, cable, LED or their logo.  
+Six miles of walking, and many hours later, I returned to my hotel empty handed and defeated. It seems that even the mecca of electronics and manufacturing this bracket had become the Moby-Dick to my Captain Ahab.
 
-Feeling sad I turned once again to my favorite website where you can buy anything: Aliexpress. After a getting warmer, I thought I had struck gold with a very obscure listing for a DELL RAID controller from 2010.  
+With fleeting desperation I turned to my last hope, Aliexpress. And wouldn't you know it after searching for every possible permutation of PCIE bracket, I had finally found it by way of a reverse-image search. It was an instant buy.
  ![Taking a crack at Aliexpress sleuthing](images/BracketOrders.jpg)
 
-Much to my dismay this is what arrived a week later. No dice. The solution then, was to take some artistic liberties (as if this whole thing wasn't already entirely fictional).
- ![Holy Bracket--and not the good kind!](images/holyBracketBatman.jpg)
+Reinvigorated I eagerly refreshed the delivery tracker until they finally arrived:
+<details>
 
+<summary>Click here to simulate the experience of opening the package</summary>
 
-placeholder [TODO image]:  
-![Result](images/HTML-Accel_Spencer.jpg)
+Surprise! Moby-Dick has eluded you yet again.  
+And now you have a bracket with the _most_ holes you have ever seen. At this point I decided since this whole thing was fictional anyway, that I had some artistic liberty, and chose to say "I tried" and move on with the project.
 
-# Electrical Testing
+![Holy Bracket--and not the good kind!](images/holyBracketBatman.jpg)
+
+</details> 
+
+# Step 7: Electrical Testing
+Now that the assembled PCBs had also arrived, I needed to test them before plugging them straight into a computer. I knew I had followed the datasheet and integrated the PCIE chips and power design correctly but I wasn't confident enough to use _my_ computer as the guinea pig.  
+A few resistance checks with my handheld multi-meter confirmed that the main power rails appeared to be correct and I couldn't see any solder issues with the board. Seeing it for the first time and holding something which had been a picture up until this point was exciting and also terrifying.  
+From Aliexpress I had also bought a PCIE-Express breakout board (I think used for bitcoin mining lol) so I could at least power it on and probe the board, and so that if anything exploded my PC would be safe.  
+I actually procrastinated for several days plugging it in because I couldn't imagine what I would do if after all this work it exploded.  
+![Images taken moments before disaster](images/TestSetup.jpg)  
+Good news! I didn't have to imagine, because it exploded instantly when I flipped the power switch on the cable.  
+Ok ok, not really. But what actually happened was the whole adapter instantly shut off to protect the power supply from permanent damage.  
+  
+🙂 🤨 😐 😶  
+
+# Step 8: Troubleshooting
+You can't have an electronics project without some diode shenanigans. Seriously, ask anyone you know at any hardware company and they will regale you with storie**s** about how much chaos/stress/pain a single diode has brought them personally-Heck I have several from my time at Apple (yes even we made mistakes).  
+
+To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will tell you exactly what went wrong:  
+
+Remember back in the [assembly section](## Buying the PCB itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
+![Mr Diode we meet again](images/diode.jpg)  
+
+But wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. But in their file the small pin of the diode is 2 where in my PCB that is the larger pin. Ok, so it could only be installed one way, but who has the wrong footprint Me, or JLC PCB?  
+![Who is wrong here?](images/diode2.jpg)  
+(It was me) But actually it wasn't me, allow me to explain.  
+When making a PCB you need footprints for every component, and because there are millions of different components, the PCB editing tools (KiCAD in my case) can't know the footprint for every single component that has or will ever exist. So usually they maintain a small reference library of the standard ones, and for anything exotic, you must go and make your own.  
+There are many ways to do this. The easiest by far is to just go on Digikey and download the library footprint and schematic symbol for to the exact part you ultimately will buy for your circuit board. And for something as simple as a two-pin component this is trivially easy and exactly what I did.  
+"Trust by verify" is a phrase I heard at work many times, and the mistake I made here was trusting that an online specialty retailer that has been around for fifty-four years and selling this diode since 2016 would accidentally flip the polarity.  
+Comparing the component datasheet on the left to the footprint I downloaded on the right you can see the "pin 1" I circled in yellow does in-fact **not** match. Rookie mistake.  
+![It was me, but not actually me, but yeah still me](images/diode3.jpg)  
+The fix was a simple one, just unsolder the diode, flip it around and solder it back onto the PCB. But because of the shape of the pins and the high-temp solder JLCPCB used, this wasn't something I could do with my regular soldering iron. Remember how I had originally planned to buy a hot-air reflow tool and do the assembly myself but chickened out because of the cost and time commitment?  
+Anyway, so I bought a bought a shiny new hot-air reflow tool, waited a week for it to arrive, and then made the simple fix to all five boards. 
+![saving time and money by doing it twice](images/diode4.jpg) 
+ 
+All fixed, and I am confident now there are no more issues with the power. So I set it up to test again, crossed my fingers and hit the switch.  
+Please allow me to demonstrate what happened next with this helpful meme:  
+![it actually exploded this time](images/itExplodesAgain.jpg)  
+
+I had just discovered that even though the AP5153 power step-down chip I chose has a maximum safe operating current of 2 Amps, and the power supply I was using also maxes out at 2 Amps, something else had gone catastrophically wrong. Yes it _actually_ did explode this time. No blue smoke, but an audible \*pop\* and then the supply shut off again. Bummer.
+
+At this point I was starting to lose hope, because I had spent days combing through the entire schematic, every part datasheet, the pinouts and wiring of every single component and it all looked perfectly fine.  
+What if something was wrong with _this_ specific board?  
+After all I did start my testing with the ugliest one, and it was clear someone at the factory had done some manual touch-ups to the soldering before they shipped it out. I figured I had nothing left to lose and reached for PCB #2 of 5, plugged it in, flipped the switch, and...  
+HOLY COW IT WORKS!!  
+![This one did not explode](images/TestSetup2.jpg)  
+
+# Step 9: Software Testing
 <write the story of buying an ancient dell from a nice old couple on craigslist.   
 ![temp](images/temp.jpg)  
 <write process for EE bringup  
+
+
+
 
 # So, does it work?
 I hope so.  
@@ -220,8 +293,11 @@ I hope so.
 placeholder for amazing chart showing computer go fast
 ![temp](images/temp.jpg)
 
-# Wrapping up
-As of this entry in April 2026 The cost breakdown is as follows:  
+# Step 10: Finale
+
+placeholder [TODO image]:  
+![Result](images/HTML-Accel_Spencer.jpg)
+As of this entry in June 2026 The cost breakdown is as follows:  
 
 | $ | Service |
 |---|-------------|

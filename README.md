@@ -251,8 +251,8 @@ Ok ok, not really. But what actually happened was the whole adapter instantly sh
 You can't have an electronics project without some diode shenanigans. Seriously, ask anyone you know at any hardware company and they will regale you with storie**s** about how much chaos/stress/pain a single diode has brought them personally-Heck I have several from my time at Apple (yes even we made mistakes).  
 
 To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will tell you exactly what went wrong:  
-
-Remember back in the [assembly section](## Buying the PCB itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
+## The problem
+Remember back in the [assembly section](##-Buying-the-PCB-itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
 ![Mr Diode we meet again](images/diode.jpg)  
 
 But wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. But in their file the small pin of the diode is 2 where in my PCB that is the larger pin. Ok, so it could only be installed one way, but who has the wrong footprint Me, or JLC PCB?  
@@ -266,7 +266,8 @@ Comparing the component datasheet on the left to the footprint I downloaded on t
 The fix was a simple one, just unsolder the diode, flip it around and solder it back onto the PCB. But because of the shape of the pins and the high-temp solder JLCPCB used, this wasn't something I could do with my regular soldering iron. Remember how I had originally planned to buy a hot-air reflow tool and do the assembly myself but chickened out because of the cost and time commitment?  
 Anyway, so I bought a bought a shiny new hot-air reflow tool, waited a week for it to arrive, and then made the simple fix to all five boards. 
 ![saving time and money by doing it twice](images/diode4.jpg) 
- 
+
+## The Solution
 All fixed, and I am confident now there are no more issues with the power. So I set it up to test again, crossed my fingers and hit the switch.  
 Please allow me to demonstrate what happened next with this helpful meme:  
 ![it actually exploded this time](images/itExplodesAgain.jpg)  
@@ -274,23 +275,106 @@ Please allow me to demonstrate what happened next with this helpful meme:
 I had just discovered that even though the AP5153 power step-down chip I chose has a maximum safe operating current of 2 Amps, and the power supply I was using also maxes out at 2 Amps, something else had gone catastrophically wrong. Yes it _actually_ did explode this time. No blue smoke, but an audible \*pop\* and then the supply shut off again. Bummer.
 
 At this point I was starting to lose hope, because I had spent days combing through the entire schematic, every part datasheet, the pinouts and wiring of every single component and it all looked perfectly fine.  
+
 What if something was wrong with _this_ specific board?  
-After all I did start my testing with the ugliest one, and it was clear someone at the factory had done some manual touch-ups to the soldering before they shipped it out. I figured I had nothing left to lose and reached for PCB #2 of 5, plugged it in, flipped the switch, and...  
+What if the earlier testing had fried something else invisibly?  
+What if the evidence of pre-existing solder touch-ups from the factory spelled trouble right from the start?
+
+I figured I had nothing left to lose and reached for PCB #2 of 5,  
+plugged it in,  
+flipped the switch,  
+and...  
 HOLY COW IT WORKS!!  
+Ignoring the graveyard of chips in the corner, the board powered up, all four LEDs turned on, nothing exploded and I was finally ready to plug it into my PC.
 ![This one did not explode](images/TestSetup2.jpg)  
 
 # Step 9: Software Testing
-<write the story of buying an ancient dell from a nice old couple on craigslist.   
-![temp](images/temp.jpg)  
-<write process for EE bringup  
+
+Alright, the hardware is ready, lets get setup to test Windows ReadyBoost.
+>in fact, Microsoft has totally removed ReadyBoost from Windows 11.
+
+![windows update strikes again](images/win11.jpg)  
+I'm joking. I still couldn't stomach exposing _my_ computer to this Frankenstein creation. Besides, I said it had to be a "slow old pc", remember?  
+So I went out and got this mean machine:
+![temp](images/dellPentium.jpg)  
+And by that I mean, I went on Craigslist, found a sweet elderly couple in my neighborhood, and paid them 20$ to take this dusty piece of e-waste off their hands.
+
+According to the Dell service tag lookup the warranty for this computer expired in September 2009, so I can only imagine they bought it new the year before in 2008.
+
+<details>
+
+<summary>Expand for a portal to Dell.com 18 years ago</summary>
+
+That equals about 705$ in 2026 dollars. Not great, not terrible.  
+Sadly the monitor did not seem to have survived two decades on this earth, but that's ok I'm only here for Windows Vista.
+![temp](images/dell2.jpg)  
+
+
+</details>
+
+Now then, a few housekeeping items before I can continue.  
+I will preface this with: I am an Electrical Engineer and I started this project without AI tools, so by-gosh I will finish it without AI tools.
+
+## My simple three-step plan
+I have been led to believe that my hardware design will just _show up_ as a ReadyBoost capable drive without needing any special drivers or tools and therefore:  
+1. Plug in the HTML Accelerator & boot the PC
+2. Windows Vista will recognize the device, load generic drivers, and prompt me to enable ReadyBoost
+3. Find some test to prove the Accelerator actually made certain activities faster
+
+## The Plan: very complex step 0
+I needed to make sure the nearly two-decade old computer actually worked. Just getting the PC booted proved to be a monumental task. Of course the CMOS battery died years ago causing the windows license to falsely expire, three different sticks or RAM were installed-causing a POST failure, and for some reason having the CD-ROM drive attached caused the CPU fan to get stuck at 100%. After clearing those hurdles the next big one was getting this thing back online.  
+
+Rather decadently this computer had been upgraded to add 2.4GHz WiFi at some point, and that's when I remembered I setup my isolated guest WiFi to 5GHz. Cue another trip down the Ubiquiti UAP config rabbit hole.  
+
+With that sorted I stumbled upon a wonderful website called [Legacy Update](https://legacyupdate.net/) where I found an installer that automatically updated the security certs and a few Vista files, ultimately allowing me to get one step closer to surfing the World-Wide-Web. Then I had to manually install a few more drivers and a more modern web browser. After some more testing I found [Supermium](https://win32subsystem.live/supermium/) broke the least often.
+
+![Ah, Windows Vista](images/legacyUpdate.jpg)  
+At this time I fired up the System info panel and ran the Windows Experience Index test. A whopping 3.1 our of 10. A perfectly good score for a very bad computer. Exactly what I wanted.
+![Ah, a 3/10 Windows experience](images/AboutPC.jpg)  
+
+<details>
+
+<summary>Optional editors sidebar "2GB of RAM is enough for anyone!"</summary>
+Throughout testing this good "bad PC" I actually was pleasantly surprised how snappy and usable it was. With just 2 GB of RAM and a 2GHz Pentium Dual-Core CPU I was taken back to a simpler time. One where the family computer lived in a little wooden cabinet. A fresh windows installation did not include "recommended apps" telemetry, Cloud Storage subscriptions, Advertisements, and AI assistants.  
+
+Why does my modern 4GHz 12-core PC need 13GB of ram just to sit idle? And I can't even pin the taskbar to a different part of the screen.  
+
+After this project is done, I might start using a good "bad PC" every day.  
+
+</details>
+
+## The Plan: Step 1
+
+Now I was finally ready to do the honors:  
+The card fit into the slot and screw mount perfectly.
+I held my phone in one hand recording, and pressed the power button with the other, and...
+No explosions. Nice!
+
+![First signs of life](images/FirstTest.gif)  
+
+## The Plan: Step 2
+
+Immediately I as greeted with the familiar device manager auto-installer popup. I was expecting to see something like a PCIE USB HUB and four SD card readers.   
+![Your device is ready to use](images/firstboot.jpg)  
+A flurry of devices were installed and opened device manager to check the [device ID](https://linux-hardware.org/?id=pci:9710-9990-a000-4000) is reporting `9710-9990-A000-4000` as expected for the MCS chip, and it is!  
+![Device ID is correct and reporting](images/deviceID.jpg)  
+
+This is where my good luck seemed to have run dry.  
+To make a long story short, I started doing more research about EMMC, flash drives, and faulty chips. It led me ultimately to a gold mine I wish I had discovered before embarking on this journey three years ago: `usbdev.ru`    
+At first I thought this was the last thing my Antivirus-less Vista box would see before falling victim to ransomware. Instead it was an immense amount of information, tools, and tutorials all written in Russian. Which explains why my quick research into this project didn't surface much.  
+Google tends to show you things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain.  
+However, I did, and conveniently Firefox's built in translation works quite nicely on my modern PC, so I began digging through the pages, transferring files with a USB drive (ironically) over to the Vista Machine. I've attached a post-translation screengrab of the Alcor section for reference. 
+![Translated from Russian](images/USBDEV.jpg)  
+![I tried everything](images/toolsToolsTools.jpg)  
+
+This site literally had everything I wished I knew, full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  By this point I had narrowed my troubles down to the Alcor `AU6438BS` IC i had chosen to emulate a USB<->EMMC card reader, solely based on that [reference design](##reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site, and what few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted to them or bought on a sleezy website.  
+The advice: 
+_"Card readers—and consequently the flash drives made from them—are generally difficult to repair. Stay Away"_  
+
+## The Plan: Step 3
 
 
 
-
-# So, does it work?
-I hope so.  
-
-placeholder for amazing chart showing computer go fast
 ![temp](images/temp.jpg)
 
 # Step 10: Finale

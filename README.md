@@ -252,7 +252,7 @@ You can't have an electronics project without some diode shenanigans. Seriously,
 
 To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will tell you exactly what went wrong:  
 ## The problem
-Remember back in the [assembly section](##-Buying-the-PCB-itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
+Remember back in the [assembly section](#-Buying-the-PCB-itself:) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. This was part of the 12->5v power step-down circuit and explains why the power supply shut off instantly.
 ![Mr Diode we meet again](images/diode.jpg)  
 
 But wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. But in their file the small pin of the diode is 2 where in my PCB that is the larger pin. Ok, so it could only be installed one way, but who has the wrong footprint Me, or JLC PCB?  
@@ -367,7 +367,7 @@ However, I did, and conveniently Firefox's built in translation works quite nice
 ![Translated from Russian](images/USBDEV.jpg)  
 ![I tried everything](images/toolsToolsTools.jpg)  
 
-This site literally had everything I wished I knew, full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  By this point I had narrowed my troubles down to the Alcor `AU6438BS` IC i had chosen to emulate a USB<->EMMC card reader, solely based on that [reference design](##reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site, and what few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted to them or bought on a sleezy website.  
+This site literally had everything I wished I knew, full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  By this point I had narrowed my troubles down to the Alcor `AU6438BS` IC i had chosen to emulate a USB<->EMMC card reader, solely based on that [reference design](#reference-usb-drive-design) that has since disappeared. Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site, and what few references to it I found were poor lost souls who had been scammed by a fake thumbdrive gifted to them or bought on a sleezy website.  
 The advice: 
 _"Card readers—and consequently the flash drives made from them—are generally difficult to repair. Stay Away"_  
 

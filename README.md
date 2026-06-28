@@ -328,9 +328,9 @@ Rather decadently this computer had been upgraded to add 2.4GHz WiFi at some poi
 
 With that sorted I stumbled upon a wonderful website called [Legacy Update](https://legacyupdate.net/) where I found an installer that automatically updated the security certs and a few Vista files, ultimately allowing me to get one step closer to surfing the World-Wide-Web. Then I had to manually install a few more drivers and a more modern web browser. After some more testing I found [Supermium](https://win32subsystem.live/supermium/) broke the least often.
 
-![Ah, Windows Vista](images/legacyUpdate.jpg)  
+![Ah, Windows Vista](images/legacyUpdateimg.jpg)  
 At this time I fired up the System info panel and ran the Windows Experience Index test. A whopping 3.1 our of 10. A perfectly good score for a very bad computer. Exactly what I wanted.
-![Ah, a 3/10 Windows experience](images/AboutPC.jpg)  
+![Ah, a 3/10 Windows experience](images/AboutPCimg.jpg)  
 
 <details>
 
@@ -355,7 +355,7 @@ No explosions. Nice!
 ## The Plan: Step 2
 
 Immediately I as greeted with the familiar device manager auto-installer popup. I was expecting to see something like a PCIE USB HUB and four SD card readers.   
-![Your device is ready to use](images/firstboot.jpg)  
+![Your device is ready to use](images/firstbootimg.jpg)  
 A flurry of devices were installed and opened device manager to check the [device ID](https://linux-hardware.org/?id=pci:9710-9990-a000-4000) is reporting `9710-9990-A000-4000` as expected for the MCS chip, and it is!  
 ![Device ID is correct and reporting](images/deviceID.jpg)  
 
@@ -396,6 +396,9 @@ That works out to each assembled PCB costing about 100$ (haha, all for joke?!)
 
 
 ## Todo:
-- Order pcbway
-- Order aliexpress: heatsinks, 3 special chips, soldering tools?
+- JPG capitalization file reference changes.
+- Readyboost test with fast USB
+- Finish writing the step 3 and summary
+- Promo photo with the final Card
+- Order aliexpress: heatsinks
 - more documentation to readme (firefox tabs to be saved here)

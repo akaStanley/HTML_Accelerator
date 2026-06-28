@@ -196,13 +196,13 @@ Then I had to wait because the factory closed in observance of the national Tomb
 
 ![text](images/PCBfabricationProcess.jpg)  
 
-If you want to learn more about what those are and why there are so many, I recommend this pair of videos that by Scotty from StrangeParts:  
+If you want to learn more about what those are and why there are so many, I recommend this pair of videos made by Scotty from StrangeParts:  
 1. [PCB Factory Tour](https://youtu.be/ljOoGyCso8s?si=2lkWY2DBJYUQQylf)
 2. [PCB Assembly Process](https://youtu.be/24ehoo6RX8w?si=gfZVr_f7mtGMDlLo)
 
 One specific item I want to draw your attention to is the "X-Ray Inspection" step of the assembly process. This is a commonly done when soldering BGA components where you can not visually inspect the solder joints because they are hidden under the component. X-ray is used because it passes easily through fiberglass/resin/silicon materials and the resulting images shows the copper of the PCB and solder joints clearly.  
 
-The darker areas of the image are more dense. For example the capacitors appear as little black rectangles, and the internal structure of the USB chips can be seen. If you look closely at the zoomed in view on the right you can even see the faint silicon bondwires and two tiny capacitors inside the EMMC package. Neat!  
+The darker areas of the image are more dense. For example the capacitors appear as little black rectangles, and the internal structure of the USB chips can be seen. If you look closely at the zoomed in view on the right you can even see the faint gold bondwires and two tiny capacitors inside the EMMC package. Neat!  
 Mercifully, all the solder joints are healthy and there are no shorts or other soldering defects present. The board is now fully assembled and ready to ship out.  
 ![text](images/xRayInspection.jpg)  
 
@@ -217,21 +217,23 @@ I ordered several options for heatsink and figured one of them would be a good m
 
  
 ## b) PCIE Bracket
-On the other hand, finding a "Full height 85mm PCIE 85mm bracket without holes" was my final hurdle.
+On the other hand, finding a "Full height 85mm PCIE bracket without holes" was my final hurdle.
 
-This turned out to actually be _impossible_ to find. I literally took a trip to Shenzhen China February 2026 and spent the an entire day in Huaqiangbei. This was not my first visit to the market, and this time I has also had dome some research (shout-out [Bunnie's Guide to Shenzhen](https://www.bunniestudios.com/blog/2019/essential-guide-to-shenzhen-web-edition/)) so I knew roughly where I needed to start my search.  
+This turned out to actually be _impossible_ to find. I literally took a trip to Shenzhen China February 2026 and spent the an entire day in Huaqiangbei. This was not my first visit to the market, and this time I has also had done some research (shout-out [Bunnie's Guide to Shenzhen](https://www.bunniestudios.com/blog/2019/essential-guide-to-shenzhen-web-edition/)) so I knew roughly where I needed to start my search.  
 
 A nice vendor on the ground floor named Ms. Hu and I had a great conversation in (my elementary school level) Mandarin where I learned that she indeed could get me the exact bracket I showed her in the photo... by way of tooling up her factory and then churning out thousands of them. She kindly pointed me in the direction of Mr. Wen.  
 At his shop upstairs in another building, we talked briefly before exchanging WeChat contacts and I learned he did not have what I was looking for, but another friend of his might.   
  ![Adventures in HQB](images/BracketAdventure.jpg)  
  
-Throughout the rest of the day I met vendor after vendor, some conversations were long, some a simple shake of the head and a finger pointing across the hallway. I found many full height brackets, but they all had some cutout for a header, cable, LED or their logo.  
-Six miles of walking, and many hours later, I returned to my hotel empty handed and defeated. It seems that even the mecca of electronics and manufacturing this bracket had become the Moby-Dick to my Captain Ahab.
+Throughout the rest of the day I met vendor after vendor, some conversations were long, some a simple shake of the head and a finger pointing across the hallway. I found many "full height" brackets but they all had quirks like offset mounting screws, holes for a header/LED, or other metalwork that made them a poor match to the reference design.  
+ ![Adventures in HQB](images/brackets.jpg)  
 
-With fleeting desperation I returned to my last hope, Aliexpress. And wouldn't you know it? After querying for every possible permutation of PCIE bracket, I had finally found it by way of a reverse-image search. They looked EXACTLY like the meme and came in a pack of 5 too-it was an instant buy.
+Six miles of walking, and many hours later, I returned to my hotel empty handed and defeated. It seems even in the mecca of electronics and manufacturing this bracket had become the Moby-Dick to my Captain Ahab.
+
+With fleeting desperation I turned to my last hope, Aliexpress. And wouldn't you know it-after querying for every possible permutation of PCIE bracket, I had finally found my white whale by way of a reverse-image search. They looked EXACTLY like the meme and came in a pack of 5 too-it was an instant buy.
  ![Taking a crack at Aliexpress sleuthing](images/BracketOrders.jpg)
 
-Reinvigorated I eagerly refreshed the delivery tracker until they finally arrived:
+Reinvigorated, I eagerly refreshed the delivery tracker until they finally arrived:
 <details>
 
 <summary>Click here to simulate the experience of opening the package</summary>
@@ -245,12 +247,14 @@ At this point I decided since this whole thing was fictional anyway, that I had 
 </details> 
 
 # Step 7: Electrical Testing
-By now the assembled PCBs had also arrived. I needed to test before plugging them straight into a computer. I knew I had followed the datasheet and integrated the PCIE chips and power design correctly but I wasn't confident enough to use _my_ computer as the guinea pig.  
-A few resistance checks with my handheld multi-meter confirmed that the main power rails appeared to be correct and I couldn't see any solder issues with the whole board. Holding for the first time something which had been a picture up until this point was exciting and also terrifying.  
-From Aliexpress I had also bought a PCIE-Express breakout board (I think used for bitcoin mining lol) so I could power on and probe the board, and if anything exploded, my PC would be safe.  
+By now the assembled PCBs had also arrived. A few check are in order before plugging them straight into a computer. I knew following the datasheets, integrating the PCIE chips, and power design have been done correctly but I wasn't confident enough to use _my_ computer as the guinea pig.  
+Resistance checks with my handheld multi-meter confirmed that the main power inputs appeared to be correct. Under the magnifier I couldn't see any glaring solder quality issues with the whole board and all the chips were oriented correctly.  
+Holding, for the first time, something which had been a jepg for so long was exciting and also nerve wracking.  
+From Aliexpress I additionally bought a PCIE-Express breakout (I think used for bitcoin mining lol) so I could power on and probe the board, and if anything exploded, _my_ PC would be safe.  
 I procrastinated plugging it in for several days because I couldn't imagine what I would do if after all this work it just exploded.  
 ![Images taken moments before disaster](images/TestSetup.jpg)  
-Good news! I didn't have to imagine, because it exploded instantly when I flipped the power switch on the cable.  
+Good news! I didn't have to imagine.  
+Because it exploded instantly when I flipped the power switch on the cable.  
 Ok ok, not really. But what actually happened was the whole adapter instantly shut off to protect the power supply from permanent damage.  
   
 🙂 🤨 😐 😶  
@@ -258,63 +262,78 @@ Ok ok, not really. But what actually happened was the whole adapter instantly sh
 # Step 8: Troubleshooting
 You can't have an electronics project without some diode shenanigans. Seriously, ask anyone at a hardware company and they will regale you with storie***s*** about how much chaos/stress/pain a single diode has brought them personally. Heck-I have several just from my time at Apple (yes even we made mistakes).  
 
-To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will tell you exactly what went wrong:  
+To save you all the hair-pulling and under-the-microscope scrutiny of the design, I will show you exactly what went wrong:  
 ## The problem
-Remember back in the [assembly section](#-Buying-the-PCB-itself) where I checked the 3D DFM placement image from JLC PCB and everything was correct? Well it turns out this one single diode was backwards causing a direct path to ground. Part of the 12->5v power step-down circuit, it and explains why the power supply shut off instantly when initialized.
+Remember back in the [assembly section](#-Buying-the-PCB-itself) where I checked the 3D DFM placement image? The one from JLC PCB where everything looked correct? Well it turns out this single diode had been installed backwards causing a direct path to ground. Part of the 12-->5v power conversion circuit, it and explains why the power supply shut off instantly when initialized.
 ![Mr Diode we meet again](images/diode.jpg)  
 
-Wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. But in their file the small pin of the diode is #2 and my PCB that is #1. Ok, so it could only be installed one way, but who has the wrong footprint Me, or JLC PCB?  
+Wait a second, checking the data for the part on JLC's website correctly shows pin 1 and 2 match my schematic. In their file, the small pin of the diode is #2 my PCB that is #1.  
+Ok, so it could only be installed one way so that means the PCB footprint is wrong. But who has the wrong footprint Me, or JLC PCB?  
 ![Who is wrong here?](images/diode2.jpg)  
-(It was me) But actually it wasn't me, allow me to explain.  
-When making a PCB you need footprints for every component, and because there are millions of different components, the PCB editing tools (KiCAD in my case) can't know the footprint for every single component that exists. Usually they maintain a small reference library of the standard ones. For anything exotic, you must go and draw your own footprint.  
-There are many ways to do this. By far the easiest is going on Digikey and download the library footprint and schematic symbol for to the exact part you ultimately will buy. For something as simple as a two-pin component this is trivially easy and exactly what I did.  
-"Trust by verify" is a phrase I heard at work many times, and the mistake I made here was trusting that an online specialty retailer that has been around for fifty-four years and selling this diode since 2016 would accidentally flip the polarity.  
-Comparing the component datasheet on the left to the footprint I downloaded on the right you can see the "pin 1" I circled in yellow does in-fact **not** match. Rookie mistake.  
+(It was me)  
+But actually it wasn't me, allow me to explain.  
+When making a PCB, you need footprints for every component. This serves to translate the schematic into the 2D copper shape on the PCB. Because there are millions of different components, PCB editing tools (KiCAD in my case) can't know the footprint for every single component that exists. Usually they maintain a small reference library of the standard shapes. For anything exotic, you must go and draw your own footprint. Like this diode.  
+  
+There are many ways to do this. By far the easiest is going on Digikey and download the library footprint + schematic symbol for to the exact part you will buy. For something simple as a two-pin component, this is trivially easy (and exactly what I did).  
+"Trust but verify" is a phrase I heard at work many times. The key mistake I made here was trusting that an online specialty retailer that has been around for fifty-four years and been selling this diode since 2016 would accidentally flip the polarity. I can only imagine how many people this has affected over the last decade...  
+
+Comparing the component datasheet on the **left**, to the footprint I downloaded on the **right** you can see the "pin 1" circled in yellow does **not** in-fact match. Rookie mistake.  
 ![It was me, but not actually me, but yeah still me](images/diode3.jpg)  
-The fix was a simple one, just unsolder the diode, flip it around and solder it back onto the PCB. But because of the shape of the pins and the high-temp solder JLCPCB used, this wasn't something I could do with my regular soldering iron. Remember how I had originally planned to buy a hot-air reflow tool and do the assembly myself but chickened out because of the cost and time commitment?  
+The fix was a simple one, just unsolder the diode, flip it around and solder it back onto the PCB. But, because of the shape and the high-temperature solder JLCPCB used, this wasn't something I could do with my regular soldering iron.  
+
+Remember how I had originally decided not to buy a hot-air reflow tool because of the cost and time involved for every board?  
+
 Anyway, so I bought a bought a shiny new hot-air reflow tool, waited a week for it to arrive, and then made the simple fix to all five boards. 
 ![saving time and money by doing it twice](images/diode4.jpg) 
 
 ## The Solution
-All fixed, and I am confident there are no more issues with the power. So I set it up to test again, crossed my fingers and hit the switch.  
+All fixed, and I am confident there are no more issues with the power. I set it up to test again, crossed my fingers and hit the switch.  
 Please allow me to demonstrate what happened next with this meme:  
 ![it actually exploded this time](images/itExplodesAgain.jpg)  
 
-I had just discovered that even though the AP5153 power chip I chose has a maximum safe operating current of 2 Amps, _and_ the power supply I was using also maxes out at 2 Amps, something else had gone catastrophically wrong. Yes it _actually_ did explode this time. No blue smoke, but an audible \*pop\* and then the supply shut off again. Bummer.
+I had just discovered another problem.  
+Even though the AP5153 power chip I chose has a maximum safe operating current of 2 Amps, _and_ the power supply I was using also tops out at 2 Amps, something else had gone catastrophically wrong. Yes it _actually_ did explode this time. No magic smoke, but an audible \*pop\* and then the supply shut off again. Bummer.
 
 At this point I was starting to lose hope, because I had spent days combing through the entire schematic, every part datasheet, the pinouts and wiring of every single component and it all looked perfectly fine.  
 
-What if something was wrong with _this_ specific board?  
-What if the earlier testing had fried something else invisibly?  
-What if the evidence of pre-existing solder touch-ups from the factory spelled trouble right from the start?
+I can not believe it actually exploded.
+Something must wrong with _this_ specific board.  
+The whole thing was a colossal waste of time and money.
+What if the earlier testing had fried something else invisibly? 
+I must be a terrible engineer.
+Maybe there is one last thing I can try...
+The real project was the stuff I learned along the way.
 
-I figured I had nothing left to lose and reached for PCB #2 of 5,  
+After completing the _7 stages of ~~grief~~ engineering_ I figured I had nothing else left to lose and slowly reached for board #2 of 5,  
 plugged it in,  
 flipped the switch,  
 and...  
-HOLY COW IT WORKS!!  
-Ignoring the graveyard of chips in the corner, the board powered up, all four LEDs turned on, nothing exploded.  
-I was finally ready to plug it into my PC.
+...  
+IT WORKS!!  
+
+Ignoring my graveyard of dead chips nearby, the board powered up, all four LEDs turned on, and best of all: nothing exploded.  
+I was finally ready to plug it in to my PC.
 ![This one did not explode](images/TestSetup2.jpg)  
 
 # Step 9: Software Testing
 
-Alright, the hardware is ready, lets get setup to test Windows ReadyBoost.
+Alright, the hardware is ready, lets get set up to test Windows ReadyBoost.
 >in fact, Microsoft has totally removed ReadyBoost from Windows 11.
 
 Oh:  
 ![windows update strikes again](images/win11.jpg)  
-I'm joking. I still couldn't stomach exposing _my_ computer to this Frankenstein creation. Besides, I said it had to be a "slow old pc", remember?  
+I'm joking.  
+I still couldn't stomach exposing _my_ computer to this Frankenstein creation. Besides, I said it had to be a "slow old pc", remember?  
 
-So I went out and got this mean machine:
+So I went out and got this Ferrari of a machine:
 ![temp](images/dellPentium.jpg)  
-And by that I mean, I went on Craigslist, found a sweet elderly couple in my neighborhood, and paid them 20$ to take this dusty piece of e-waste off their hands.
+By that I mean, I went on Craigslist, found a nice elderly couple in my neighborhood, and paid them 20$ to take this dusty piece of e-waste off their hands.
 
-According to the Dell service tag, the warranty for this computer expired in September 2009, so I can only imagine they bought it new the year before in 2008.
+According to the Dell service tag, the warranty for this computer expired in September 2009, so I can only imagine they bought it new the year before in 2008, eighteen years ago.
 
 <details>
 
-<summary>Expand to travel back in time 18 years to Dell.com</summary>
+<summary>Expand to travel back in time to Dell.com</summary>
 
 That equals about 730$ in 2026 dollars. Not great, not terrible.  
 Sadly the monitor did not seem to have survived two decades on this earth, but that's ok I'm only here for Windows Vista.
@@ -323,30 +342,31 @@ Sadly the monitor did not seem to have survived two decades on this earth, but t
 
 </details>
 
-Now then, a few housekeeping items before I can continue.  
-I will preface this with: I am an Electrical Engineer and I started this project without AI tools, so by-gosh I will finish it without AI tools. Any special software tools, code or errata I will need to find (because there is no way I can write it myself).  
+Now then, I want to preface the next section with:  
+I am an Electrical Engineer and I started this project without AI tools (because they didn't exist). I want finish it without them too. I want to take full credit for this abomination. Any special software tools, code or errata I may need going forward I have to find online (because there is no way I'm going to write Windows Vista OS drivers myself).  
 
 ## My simple three-step plan
-Rather cunningly I believe that my hardware design will just _show up_ as a ReadyBoost capable drive without needing any special drivers or tools and therefore:  
+Rather cunningly I believe that my hardware design will just _show up_ as a ReadyBoost capable drive without needing any special drivers or tools. Therefore allow me to outline the remaining three step plan:  
 1. Plug in the HTML Accelerator & boot the PC
 2. Windows Vista will recognize the device, load generic drivers, and prompt me to enable ReadyBoost
-3. Find some test to prove the Accelerator actually made any activities faster
+3. Find some test to prove the Accelerator actually made it faster
 
 ## The Plan: very complex step 0
-My three step plan is 0-index (ha ha  programming joke).  
-First, I needed to make sure the nearly two-decade old computer actually worked. Just getting the PC booted proved to be a monumental task. Of course the CMOS battery died years ago causing the windows license to falsely expire, three different sticks or RAM were installed-causing a POST failure, and for some reason having the CD-ROM drive present caused the CPU fan to peg at 100%. After clearing those hurdles the next big one was getting this thing back online.  
+My three step plan is 0-indexed (ha-ha  programming joke).  
+First, I needed to make sure the nearly two-decade old computer actually works. Just getting the PC turned on proved to be a monumental task.  
+Three different sticks or RAM were installed-causing a POST failure, for some reason having the CD-ROM drive present caused the CPU fan to peg at 100%, and of course the CMOS battery died years ago causing the windows license to falsely expire when I did get it running. After clearing those hurdles the next big one was getting this thing back online.  
 
-At some large expense this computer had been upgraded to add 2.4GHz WiFi at some point, and that's when I remembered I setup my isolated guest WiFi @ 5GHz. Cue another trip down the Ubiquiti UAP config rabbit hole.  
+Luxuriously, this computer had been upgraded to add 2.4GHz WiFi at some point, and that's when I remembered I setup my isolated guest WiFi @ 5GHz. Cue my annual trip down the Ubiquiti UAP configuration rabbit hole.  
 
-With that sorted, I stumbled upon a wonderful website called [Legacy Update](https://legacyupdate.net/) where I found an installer that automatically updated the security certs and a few other files, ultimately allowing me to relicense Windows and get one step closer to surfing the World-Wide-Web. Then I only had to manually install a few more drivers and a modern web browser. After some more testing I found [Supermium](https://win32subsystem.live/supermium/) broke the least often.
-
+With that sorted, I stumbled upon a wonderful website called [Legacy Update](https://legacyupdate.net/) where I found an installer that automatically updated the security certs and a few other files, ultimately allowing me to re-license Windows and get one step closer to surfing the World-Wide-Web. I only had to manually install a few more display drivers and a modern web browser. After some more testing I found [Supermium](https://win32subsystem.live/supermium/) broke the least often.
 ![Ah, Windows Vista](images/legacyUpdateimg.jpg)  
+
 At this time I fired up the System info panel and ran the Windows Experience Index test. A whopping 3.1 out of 10. A perfectly good score for a very bad computer. Exactly what I wanted.
 ![Ah, a 3/10 Windows experience](images/AboutPCimg.jpg)  
 
 <details>
 
-<summary>Optional editors sidebar "2GB of RAM is enough for anyone!"</summary>
+<summary>Optional author's sidebar: "2GB of RAM is enough for anyone!"</summary>
 Throughout testing this good "bad PC" I actually was pleasantly surprised how snappy and usable it was. With just 2 GB of RAM and a 2GHz Pentium Dual-Core CPU I was taken back to a simpler time. One where the family computer lived in a little wooden cabinet. A fresh windows installation did not include "recommended apps" telemetry, Cloud Storage subscriptions, Advertisements, and AI assistants.  
 
 Why does my modern 4GHz 12-core PC need 13GB of ram just to sit idle? And why can't I move the taskbar to a different part of the screen? The solution must be more RAM.  
@@ -358,62 +378,67 @@ After this project is done, I might start using my new good "bad PC" more often.
 ## The Plan: Step 1
 
 Now I was finally ready to do the honors:  
-The card fit into the slot and screw mount perfectly.
-I held my phone in one hand recording, and pressed the power button with the other, and...
+The card fit into the slot and screwed in perfectly.  
+Filming with my phone in one hand, I pressed the power button with the other, and...
 No explosions. Nice!
 
 ![First signs of life](images/FirstTest.gif)  
 
 ## The Plan: Step 2
 
-Immediately I was greeted with the familiar device manager auto-installer popup. I was expecting to see something like a PCIE USB HUB and four SD card readers.   
+Immediately I was greeted with the familiar device manager auto-installer popup. I was expecting to see something like a PCIE USB HUB and four generic SD card readers.   
 ![Your device is ready to use](images/firstbootimg.jpg)  
-A flurry of things were automatically installed. Opening the Windows Device Manager I checked the [device ID](https://linux-hardware.org/?id=pci:9710-9990-a000-4000) reported `9710-9990-A000-4000` as expected for the MCS chip, and it did!  
+
+A flurry of things were automatically installed. Checking for the the device ID `9710-9990-A000-4000` meant I knew the [MCS chip](https://linux-hardware.org/?id=pci:9710-9990-a000-4000) was working as expected!  
 ![Device ID is correct and reporting](images/deviceIDimg.jpg)  
 
-This is where my lucky run ran dry.  
-To make a long story short, I started doing more research about EMMC, flash drives, and faulty chips. It led me ultimately to a gold mine I wish I had discovered before embarking on this journey three years ago: `usbdev.ru`    
-At first, I thought this would be the last thing my Antivirus-less Vista box would see before falling victim to ransomware. Instead, it was an immense amount of information, tools, and tutorials all written in Russian. Which explains why my initial research into this project didn't surface it.  
-Google nowadays tends to show you only things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain.  
-I did however, and conveniently Firefox's built in translation works nicely on my modern PC. I've attached a post-translation screengrab of the Alcor section for reference. 
+This is where my lucky run ended. The SD card reader/EMMC combo was nowhere to be found. 
+  
+To make a longer story short, I started doing more research about EMMC, flash drives, and faulty chips. It led me ultimately to a gold mine I wish I had discovered before embarking on this journey three years ago: `usbdev.ru`      
+At first, I thought this would be the last thing my virgin Vista box would see before falling victim to ransomware. Instead, it was an immense amount of information, tools, and tutorials all written in Russian. Which explains why my early research into this project didn't surface it.  
+Google nowadays tends to show you only things it can make the most advertisement revenue from, and with current US-Russia relations it wanted nothing to do with this domain. But I did.  
+Conveniently, Firefox's built in translation works nicely on my modern PC. I've attached a post-translation screengrab of the Alcor section for reference. 
 ![Translated from Russian](images/USBDEV.jpg)  
 
 This site literally had everything I wished I knew when drawing the block diagram. Full reference schematics for USB-drives, IC pinouts, and datasheets for long forgotten storage chips.  
-By this point I had narrowed my trouble down to the Alcor `AU6438BS`. The IC I chose to emulate a USB<->EMMC card reader. This was solely based on a [reference design](#reference-usb-drive-design) that has since disappeared.  
-Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site. The few references to it I found were lost souls who had been scammed by a fake thumbdrive gifted or bought from the dark side of Aliexpress (it all comes full circle).  
+By this point I had narrowed my troubles down to the Alcor `AU6438BS`. The IC I used to emulate a USB<->EMMC card reader. This was solely based on a [reference design](#reference-usb-drive-design) that has since disappeared from the internet.  
+Because this was an SD CardReader IC and not a typical USB Thumbdrive, there wasn't much info on the site. The few references to it I found were lost souls who had been scammed by a fake thumbdrive bought from the dark side of Aliexpress (it all comes full circle).  
+
 The translated advice:  
 _"Card readers—and consequently the flash drives made from them—are generally difficult to repair. Stay Away"_  
 
-And I, of course, chose to ignore that advice and began digging deeper through the site, transferring files with a USB drive (ironically) over to the Vista Machine in a futile attempt to communicate with the storage controller.
+And I, of course, chose to ignore that advice. Digging deeper through the site; transferring files with a USB drive (ironically) over to the Vista Machine in a futile attempt to communicate with the storage controller.
 ![I tried everything](images/toolsTools.jpg)  
-
-I have a few theories as to what may have happened
-1. Because I bought my chips from, lets call it the "shadow side" of Aliexpress, there is no guarantee that they actually work (I knew this going in)
-2. The chips are fine, but due to the limited datasheets, I am missing some key electrical integration
-3. X-rays are known to damage non-volatile storage, corrupting data and flipping bits. I knew this and totally forgot when approving the assembly & inspection procedures. JLCPCB took 8 x-rays of my boards. Exposing only the EMMC and Alcor chips (and not the MCS PCIE chip) during which they could have been inadvertently erasing the firmware on the USB controller.
+But I remain ultimately unsuccessful.  
+I have a few theories as to what may have happened:
+1. I bought my chips from, lets call it the "shadow side" of Aliexpress, there is no guarantee that they actually worked in the first place (I knew this going in).
+2. The chips are fine, but due to the limited datasheets, I am missing some key electrical integration. As far as I know, nobody else has tried this dumb idea before. This is uncharted territory.
+3. X-rays are known to damage non-volatile storage, corrupting data and flipping bits. I already knew this and totally forgot when approving the board assembly & inspection procedures. JLCPCB took 8 x-rays of my boards in total. Exposing only the EMMC and Alcor chips (and not the MCS PCIE chip) during which they could have been inadvertently erasing the firmware on the USB controller.
 
 ## The Plan: Step 3
 
-In the spirit of "the plan" (and because I already went through the trouble of setting up a whole good "bad computer") I felt that I should at least _try_ to see if any USB device would actually make anything faster. By proxy that would mean my design was theoretically valid.
+In the spirit of "the plan" (and because I already went through the trouble of setting up a whole good "bad computer") I felt that I should at least _try_ to see if a USB device would actually make anything faster. By proxy that would mean my design was theoretically valid.
 
-I got a dependable USB3.0<-->MicroSD Card Reader and attached a modern 64GB Sandisk-Extreme-Pro SD card to it. I knew this was much faster than the PC could handle. I wanted to be sure the USB 2.0 link would be fully saturated, and that the test results would only show the net effect:
+I got a dependable USB3.0<-->MicroSD Card Reader and inserted a modern 64GB Sandisk-Extreme-Pro SD card. I knew this was much faster than the PC could handle. I wanted to be sure the USB 2.0 link would be fully saturated, and that the test results would only show the net effect.
 ![Ready to Boost](images/readyboostTest.jpg)
 
-I found an "period correct" version of CrystalDiskMark and ran a few tests.  
+I used a "period correct" version of CrystalDiskMark to ran a few tests.  
 Below is the before and after of enabling Windows ReadyBoost on my 2008 Dell Inspiron 530, with a 2GHz Intel Pentium Dual-core CPU, 2GB of Ram and a 230GB Hard Drive: 
-![It does actually work, sort of](images/BoostBenefit.jpg)  
-(Higher numbers are better)  
-I've got to be honest and say: yeah, I am a little disappointed.  
-Probably should have spent the 20$ and done this test before starting this whole project. But I think that is on par with most people who actually used ReadyBoost.  
+![It does actually work, sort of](images/BoostBenefit.jpg)
+~(Higher numbers are better)~  
 
-It did make the **random** reads 76% faster-almost the "up to 80% faster" claim I read at the very beginning. This makes sense because flash storage has much faster access times than physically moving the head of a spinning hard drive to the data location. You're commanding electrons versus a little robot arm.  
-I think the **sequential** read/write speeds are not affected here because this is a nearly empty hard drive on a fresh installation of windows. So there is a lot of empty runway for the HDD to just write that data in one fell swoop. Younger readers may not have ever experienced the joy of de-fragmenting your hard drive so that all the common files were physically near each other on the platter. That act alone also made your computer faster.
+I've got to be honest and say: yeah, I am a little disappointed.  
+Probably should have spent the 20$ and done this test before starting this whole project. Ultimately my disappointment is on par with most people who actually tried to use ReadyBoost.  
+
+It did make the **random** reads 76% faster-almost the "up to 80% faster" claim I read at the very beginning. This makes sense because flash storage has much faster access times than physically moving the head of a spinning hard drive to the data location. You're moving electrons instead of a mechanical armature.  
+
+I think the **sequential** read/write speeds are not affected here because this is a nearly empty hard drive on a fresh installation of windows. So there is a lot of empty runway for the HDD to just write that data in one fell swoop. Younger readers may not have ever experienced the joy of de-fragmenting your hard drive so that all the common files were physically near each-other on the platter. That act alone already made your computer faster. Modern PCs with SSDs don't need this because the access times are already so blazing fast.  
 
 # Step 10: The End.
 
 I've said enough in the preceding 6k words, so I will be quick.
 
-- **Did I achieve what I set out to do?** Yes (mostly)
+- **Did I achieve what I set out to do?** Yes (technically)
 - **What have I learned along the way?** Lots (some stuff more than I wanted)
 
 - **How much did this all cost?**
@@ -426,20 +451,22 @@ I've said enough in the preceding 6k words, so I will be quick.
 	|119 | 5x PCB SMT Assembly & standard parts |
 	|158 | PCB Taxes, Shipping, Customs Duties |
 	|185 | "Obsolete" parts consigned to JLC |
-	|32  | Mechanical + Misc consumable parts|
+	|41  | Mechanical + Misc consumable parts|
 	|168 | Soldering and (new) test equipment|
 	|||
-	|**783**  | **Total (5 boards)** |
+	|**791**  | **Total (5 boards)** |
 	
-	That works out to about 155$ for each HTML Accelerator card. To be honest, much more than I was originally expecting.
+	That works out to about 160$ for each HTML Accelerator card. Approximately 100 more than I was originally expecting.
 	
 	</details>
 
 
 - **Should you make your own?** Actually, I have three more "working" boards, if you think you can revive the EMMC/Alcor chip, drop me a line and we can figure something out.
 
-Thanks for joining me and I hope you learned something too.  
+Thanks for joining me on this adventure and I hope you learned something too.  
 ~Spencer K, June 2026  
+
+P.S Ninji if you are out there reading this, give me your address and I will send you one. 
 
 
 placeholder [TODO image]:  
@@ -450,4 +477,3 @@ placeholder [TODO image]:
 - proofread and spellcheck
 - Promo photo with the final Card
 - Order aliexpress: heatsinks
-- more documentation to readme (firefox tabs to be saved here)

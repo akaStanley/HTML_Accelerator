@@ -425,7 +425,7 @@ I got a dependable USB3.0<-->MicroSD Card Reader and inserted a modern 64GB Sand
 I used a "period correct" version of CrystalDiskMark to ran a few tests.  
 Below is the before and after of enabling Windows ReadyBoost on my 2008 Dell Inspiron 530, with a 2GHz Intel Pentium Dual-core CPU, 2GB of Ram and a 230GB Hard Drive: 
 ![It does actually work, sort of](images/BoostBenefit.jpg)
-~(Higher numbers are better)~  
+(Higher numbers are better)   
 
 I've got to be honest and say: yeah, I am a little disappointed.  
 Probably should have spent the 20$ and done this test before starting this whole project. Ultimately my disappointment is on par with most people who actually tried to use ReadyBoost.  

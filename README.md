@@ -438,9 +438,8 @@ I think the **sequential** read/write speeds are not affected here because this 
 
 I've said enough in the preceding 6k words, so I will be quick.
 
-- **Did I achieve what I set out to do?** Yes (technically)
-- **What have I learned along the way?** Lots (some stuff more than I wanted)
-
+- **Did I achieve what I set out to do?** Yes (on a technicality)
+- **What have I learned along the way?** Lots (more than I expected)
 - **How much did this all cost?**
 	<details>
 	<summary>Itemized Breakdown</summary>
@@ -452,28 +451,21 @@ I've said enough in the preceding 6k words, so I will be quick.
 	|158 | PCB Taxes, Shipping, Customs Duties |
 	|185 | "Obsolete" parts consigned to JLC |
 	|41  | Mechanical + Misc consumable parts|
-	|168 | Soldering and (new) test equipment|
+	|130 | Soldering equipment|
+	|58  | Test equipment|
 	|||
-	|**791**  | **Total (5 boards)** |
+	|**812**  | **Total (5 boards)** |
 	
 	That works out to about 160$ for each HTML Accelerator card. Approximately 100 more than I was originally expecting.
-	
 	</details>
-
 
 - **Should you make your own?** Actually, I have three more "working" boards, if you think you can revive the EMMC/Alcor chip, drop me a line and we can figure something out.
 
 Thanks for joining me on this adventure and I hope you learned something too.  
-~Spencer K, June 2026  
+_~Spencer K, June 2026_  
 
-P.S Ninji if you are out there reading this, give me your address and I will send you one. 
+P.S Ninji if you are out there reading this, reach out with your address and I will send you one. 
 
+![Final Result](images/HTML-Accel_Spencer_Photo_front.jpg)
 
-placeholder [TODO image]:  
-![Result](images/HTML-Accel_Spencer.jpg)
-
-
-## Todo:
-- proofread and spellcheck
-- Promo photo with the final Card
-- Order aliexpress: heatsinks
+![Final Result](images/HTML-Accel_Spencer_Photo_back.jpg)

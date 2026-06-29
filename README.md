@@ -466,6 +466,13 @@ _~Spencer K, June 2026_
 
 P.S Ninji if you are out there reading this, reach out with your address and I will send you one. 
 
-![Final Result](images/HTML-Accel_Spencer_Photo_front.jpg)
+![Final Result](images/PresentingHTMLAccel.jpg)
+<details>
 
-![Final Result](images/HTML-Accel_Spencer_Photo_back.jpg)
+<summary>High resolution board photos</summary>
+
+![HTML Accelerator Front side](images/HTML-Accel_Spencer_Photo_front.jpg)
+
+![HTML Accelerator Back side](images/HTML-Accel_Spencer_Photo_back.jpg)
+
+</details>
